@@ -59,7 +59,7 @@ src/
 - Renk/tipografi değişimi: `tailwind.config.js` + `src/index.css`.
 - Animasyonlar `Reveal.jsx` (scroll reveal + stagger) üzerinden; yeni efektlerde
   `prefers-reduced-motion`'a saygı korunmalı.
-- CV butonu `public/Ramazan-Bora-Kececi-CV.pdf` dosyasını arar (henüz eklenmedi).
+- CV indirme özelliği yok (buton Hero + Navbar'dan kaldırıldı).
 
 ## Güncel durum / notlar
 
@@ -71,22 +71,25 @@ src/
 
 ## Proje görselleri
 
-Gerçek ekran görüntüleri `public/projects/` altında. Bir projeye görsel eklemek için
-`content.js`'teki ilgili proje nesnesine `image: '/projects/dosya.png'` alanını ekle —
-`Projects.jsx` görsel varsa "cihaz peek" stiliyle gösterir, yoksa blueprint placeholder
-kullanır.
+Görseller `public/projects/` altında, **WebP** formatında (performans için PNG'den
+çevrildi — toplam ~350 KB). Bir projeye görsel eklemek için `content.js`'teki ilgili
+proje nesnesine `image: '/projects/dosya.webp'` alanını ekle — `Projects.jsx` görsel
+varsa "cihaz peek" stiliyle gösterir, yoksa blueprint placeholder kullanır.
+- Yatay/diagram görseller için `wide: true` ekle (object-contain, telefon-peek yerine).
+- Tüm görseller tıklanınca lightbox dialog'da büyür.
 
-Gerçek görselli kartlar (Play Store / store screenshot'larından):
-`bks-panel.png`, `bks-flow.png`, `bks-messenger.png`, `bks-smart.png`, `bks-calc.png`,
-`go-timer.png`, `chess.png`. Görselsiz (placeholder) kalanlar: ERP Stock & Purchase Sync
-(backend), Municipal Service Applications (gizli), Embedded & ESP32 (screenshot yok).
+Güncel görselli kartlar: `bks-panel.webp`, `bks-flow.webp`, `bks-smart.webp`,
+`municipal.webp`, `go-timer.webp`, `chess.webp`, `esp32-pinout.webp` (sonuncu `wide`).
+Görselsiz (placeholder): Embedded & ESP32 dışındakiler tamam.
 
-BKS uygulamaları Play Store paketleri: bksflow=BKS Flow, bkschat=BKS Messenger,
-bksbayiapp=BKS Panel, bks=BKS Smart (com.bkscam.*). Screenshot'lar oradan alındı.
+BKS uygulamaları Play Store paketleri: bksflow=BKS Flow, bksbayiapp=BKS Panel,
+bks=BKS Smart (com.bkscam.*); "Detay" linki yalnızca `url` (Play Store) olan kartlarda.
+
+> Yeni görsel eklerken büyük PNG koymayın; ekran boyutuna göre küçültüp WebP'ye
+> çevirin (portreler ~720px, q82; pinout gibi metinli geniş görseller tam çözünürlük, q88).
 
 ## Yapılacaklar
 
-- [ ] Gerçek CV PDF'i `public/Ramazan-Bora-Kececi-CV.pdf` olarak ekle.
 - [ ] BKS bitiş tarihini doğrula (şu an `06.2026`).
 - [x] AI-klişesi metin/tasarım temizliği (Codex raporuna göre).
 - [x] Gerçek proje görselleri (Go timer, Chess); kalanlar için screenshot bekleniyor.

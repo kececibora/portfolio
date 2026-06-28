@@ -42,11 +42,6 @@ Neredeyse tüm metin **`src/i18n/content.js`** içinde, `tr` ve `en` olarak ikiy
 İki tarafın da aynı yapıda olmasına dikkat et. İletişim bilgileri dosyanın altındaki
 `profile` nesnesinde.
 
-## CV
-
-CV indir butonu `public/Ramazan-Bora-Kececi-CV.pdf` dosyasını arar.
-Kendi PDF'ini bu isimle `public/` klasörüne koyman yeterli.
-
 ## Renk / tipografi
 
 Tasarım tokenları `tailwind.config.js` (renkler, fontlar, animasyonlar) ve
@@ -55,5 +50,6 @@ Tasarım tokenları `tailwind.config.js` (renkler, fontlar, animasyonlar) ve
 
 ## Deploy
 
-`npm run build` sonrası `dist/` klasörünü Netlify, Vercel veya GitHub Pages'e atabilirsin.
-GitHub Pages için `vite.config.js` içine `base: '/repo-adi/'` eklemen gerekebilir.
+Canlı: **https://rbkececi.com** — **Vercel** üzerinde, `github.com/kececibora/portfolio`
+reposuna bağlı. `main` dalına her `git push`'ta Vercel otomatik build alıp yayınlar
+(Framework: Vite, build: `npm run build`, çıktı: `dist`). Ayrı bir manuel adım yok.
