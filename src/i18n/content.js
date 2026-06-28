@@ -133,7 +133,7 @@ export const content = {
           desc: 'Bayiler için ürün vitrini, fiyat, sipariş ve teklif yönetimi sağlayan B2B platformu; Logo Tiger ERP’ye bağlı. Google Play’de yayında.',
           tags: ['Flutter', 'Firebase', 'Logo Tiger ERP', 'REST API'],
           code: 'platform/bks-panel',
-          image: '/projects/bks-panel.png',
+          image: '/projects/bks-panel.webp',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksbayiapp',
         },
         {
@@ -141,7 +141,7 @@ export const content = {
           desc: 'Dinamik form, onay akışı, görev ve süreç takibi yapan kurumsal iş akışı uygulaması; grafikler ve raporlamayla. Google Play’de yayında.',
           tags: ['Flutter', 'Firebase', 'İş Akışı', 'Dashboard'],
           code: 'app/bks-flow',
-          image: '/projects/bks-flow.png',
+          image: '/projects/bks-flow.webp',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksflow',
         },
         {
@@ -149,7 +149,7 @@ export const content = {
           desc: 'Katlanır cam, pergola ve sürgülü sistemleri uygulamadan açıp kapatan, aydınlatma kontrolü sağlayan akıllı kontrol uygulaması. Google Play’de yayında.',
           tags: ['Flutter', 'IoT', 'Bluetooth', 'ESP32'],
           code: 'app/bks-smart',
-          image: '/projects/bks-smart.png',
+          image: '/projects/bks-smart.webp',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bks',
         },
         {
@@ -157,7 +157,7 @@ export const content = {
           desc: 'Su kullanım faturalandırması, ödeme entegrasyonları ve veri dashboardları içeren belediye servis uygulamaları.',
           tags: ['Flutter', 'API Integration', 'Payment', 'Data Viz'],
           code: 'gov/municipal-suite',
-          image: '/projects/municipal.png',
+          image: '/projects/municipal.webp',
           wide: true,
         },
         {
@@ -165,7 +165,7 @@ export const content = {
           desc: 'Eskişehir Go Oyuncuları Derneği için geliştirilen ve Google Play’de yayınlanan turnuva zamanlayıcı uygulaması. Japon/Kanada byoyomi ve ani ölüm modları, çoklu dil ve tema.',
           tags: ['Flutter', 'Android', 'Google Play'],
           code: 'app/go-timer',
-          image: '/projects/go-timer.png',
+          image: '/projects/go-timer.webp',
           url: 'https://play.google.com/store/apps/details?id=com.borakececi.gotimer',
         },
         {
@@ -173,14 +173,14 @@ export const content = {
           desc: 'Reklamsız ve çevrimdışı çalışan bir satranç antrenman uygulaması. Kendi 8×8 tahtası ve test edilmiş saf mantık çekirdeği üzerine kurulu.',
           tags: ['Flutter', 'Dart', 'Çevrimdışı', 'Lichess Puzzles'],
           code: 'app/chess-trainer',
-          image: '/projects/chess.png',
+          image: '/projects/chess.webp',
         },
         {
           name: 'Embedded & ESP32 Experiments',
           desc: 'ESP32, Arduino, Bluetooth ve sensör tabanlı yazılım-donanım entegrasyonları; üretim birimleri için işleri kolaylaştıran arıza tespit ve güncelleme otomasyonları.',
           tags: ['ESP32', 'Arduino', 'Bluetooth', 'Embedded'],
           code: 'hardware/esp32-lab',
-          image: '/projects/esp32-pinout.png',
+          image: '/projects/esp32-pinout.webp',
           wide: true,
         },
       ],
@@ -378,7 +378,7 @@ export const content = {
           desc: 'A B2B platform for dealers — product catalog, pricing, orders, and quotes, connected to Logo Tiger ERP. Published on Google Play.',
           tags: ['Flutter', 'Firebase', 'Logo Tiger ERP', 'REST API'],
           code: 'platform/bks-panel',
-          image: '/projects/bks-panel.png',
+          image: '/projects/bks-panel.webp',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksbayiapp',
         },
         {
@@ -386,7 +386,7 @@ export const content = {
           desc: 'An enterprise workflow app with dynamic forms, approval flows, and task/process tracking — with charts and reporting. Published on Google Play.',
           tags: ['Flutter', 'Firebase', 'Workflow', 'Dashboard'],
           code: 'app/bks-flow',
-          image: '/projects/bks-flow.png',
+          image: '/projects/bks-flow.webp',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksflow',
         },
         {
@@ -394,7 +394,7 @@ export const content = {
           desc: 'A smart-control app that opens, closes, and controls the lighting of folding glass, pergola, and sliding systems from your phone. Published on Google Play.',
           tags: ['Flutter', 'IoT', 'Bluetooth', 'ESP32'],
           code: 'app/bks-smart',
-          image: '/projects/bks-smart.png',
+          image: '/projects/bks-smart.webp',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bks',
         },
         {
@@ -402,7 +402,7 @@ export const content = {
           desc: 'Municipal service apps featuring water-usage billing, payment integrations, and data dashboards.',
           tags: ['Flutter', 'API Integration', 'Payment', 'Data Viz'],
           code: 'gov/municipal-suite',
-          image: '/projects/municipal.png',
+          image: '/projects/municipal.webp',
           wide: true,
         },
         {
@@ -410,7 +410,7 @@ export const content = {
           desc: 'A tournament timer app built for the Eskişehir Go Players Association and published on Google Play. Japanese/Canadian byoyomi and sudden-death modes, multiple languages and themes.',
           tags: ['Flutter', 'Android', 'Google Play'],
           code: 'app/go-timer',
-          image: '/projects/go-timer.png',
+          image: '/projects/go-timer.webp',
           url: 'https://play.google.com/store/apps/details?id=com.borakececi.gotimer',
         },
         {
@@ -418,14 +418,14 @@ export const content = {
           desc: 'An ad-free, offline chess training app, built on its own 8×8 board and a tested, pure logic core.',
           tags: ['Flutter', 'Dart', 'Offline', 'Lichess Puzzles'],
           code: 'app/chess-trainer',
-          image: '/projects/chess.png',
+          image: '/projects/chess.webp',
         },
         {
           name: 'Embedded & ESP32 Experiments',
           desc: 'ESP32, Arduino, Bluetooth, and sensor-based hardware-software integration — including fault-detection and update automations that streamline work for production units.',
           tags: ['ESP32', 'Arduino', 'Bluetooth', 'Embedded'],
           code: 'hardware/esp32-lab',
-          image: '/projects/esp32-pinout.png',
+          image: '/projects/esp32-pinout.webp',
           wide: true,
         },
       ],
