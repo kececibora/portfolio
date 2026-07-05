@@ -27,6 +27,23 @@ npm run build    # dist/
 npm run preview  # build önizleme
 ```
 
+## Deploy & performans (ÖNEMLİ — atlama)
+
+- Canlı: **https://rbkececi.com** — Vercel, `github.com/kececibora/portfolio` reposuna
+  bağlı. `main`'e her push otomatik deploy tetikler; ayrıca manuel adım yok.
+- **`vercel.json` cache başlıklarını YÖNETİYOR, silme/bozma.** Vercel'in varsayılanı
+  her dosyaya `max-age=0, must-revalidate` basmak; bu, iPhone/mobilde her açılışta
+  ~10 dosyanın tek tek revalidate edilmesine ve ~5 sn boş ekrana yol açtı (yaşandı,
+  2026-07 velidasyonu). Çözüm olarak:
+  - `/assets/*` (hash'li JS/CSS) → `max-age=31536000, immutable` (1 yıl). GÜVENLİ:
+    Vite her build'de dosya adına içerik hash'i koyar; içerik değişince ad değişir,
+    ziyaretçi yeni dosyayı ilk açılışta alır. Süreyi kısaltmanın faydası yok.
+  - `/projects/*` (görseller, hash'siz sabit adlar) → `max-age=604800` (1 hafta) +
+    `stale-while-revalidate`. Aynı adla görsel değiştirirsen en geç 1 hafta içinde
+    yayılır; anında görünmesi gerekiyorsa dosya adını değiştir (ör. `-v2` eki).
+- Görseller WebP ve küçük tutulmalı (bkz. "Proje görselleri" bölümü). Büyük PNG
+  commit'leme — 2 MB'lık tek görsel siteyi 6.7 MB'a çıkarmıştı.
+
 ## Yapı
 
 ```
