@@ -225,7 +225,7 @@ export const content = {
     contact: {
       eyebrow: 'İletişim',
       title: 'Birlikte çalışalım',
-      lead: 'Flutter, bir ERP entegrasyonu ya da belediye/iş akışı uygulaması — aklındakini yaz, birkaç gün içinde dönerim.',
+      lead: 'Flutter, bir ERP entegrasyonu ya da belediye/iş akışı uygulaması için yeni projelere açığım; birkaç gün içinde dönüş sağlıyorum.',
       labels: { email: 'E-posta', phone: 'Telefon', location: 'Konum' },
       location: 'Ankara, Türkiye',
       cta: 'E-posta Gönder',
@@ -471,7 +471,7 @@ export const content = {
     contact: {
       eyebrow: 'Contact',
       title: 'Let’s work together',
-      lead: 'Flutter, an ERP integration, or a municipal/business workflow app — tell me what you have in mind and I’ll get back within a few days.',
+      lead: 'I’m open to new projects involving Flutter, ERP integrations, or municipal/business workflow apps, and get back within a few days.',
       labels: { email: 'Email', phone: 'Phone', location: 'Location' },
       location: 'Ankara, Türkiye',
       cta: 'Send an Email',
