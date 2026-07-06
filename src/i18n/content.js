@@ -115,7 +115,7 @@ export const content = {
           period: '2019 — 2022',
           bullets: [
             'Şantiyede proje yönetimi, saha koordinasyonu ve paydaş ilişkilerini yürüttüm; bir problemin nasıl çözüldüğünü sahada öğrendim.',
-            'O yıllarda kazandığım saha sezgisini, bugün iş süreçlerini yazılıma çevirirken her gün kullanıyorum.',
+            'O yıllarda kazandığım analitik düşünmeyi, bugün yazılım alanında temel alıyorum.',
           ],
         },
       ],
@@ -361,7 +361,7 @@ export const content = {
           period: '2019 — 2022',
           bullets: [
             'Ran project management, site coordination, and stakeholder relations on construction sites — where I learned, hands-on, how a real problem actually gets solved.',
-            'That on-site instinct is something I still use every day when turning business processes into software.',
+            'The analytical thinking I gained in those years is something I still draw on in software today.',
           ],
         },
       ],
