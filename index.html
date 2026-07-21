@@ -35,6 +35,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Chrome <71 WebViews lack queueMicrotask; framer-motion calls it unguarded
+         at module scope. Must run before the bundle. -->
+    <script>
+      window.queueMicrotask ||
+        (window.queueMicrotask = function (cb) {
+          Promise.resolve().then(cb)
+        })
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
