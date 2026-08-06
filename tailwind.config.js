@@ -4,16 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0A0C10',
-        'ink-2': '#0E1117',
-        panel: '#12151C',
-        'panel-2': '#171B24',
-        line: '#232A36',
-        text: '#E7ECF3',
-        muted: '#8B95A7',
-        faint: '#5A6473',
-        accent: '#3FE0FF',
-        'accent-2': '#8A6BFF',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        'ink-2': 'rgb(var(--color-ink-2) / <alpha-value>)',
+        panel: 'rgb(var(--color-panel) / <alpha-value>)',
+        'panel-2': 'rgb(var(--color-panel-2) / <alpha-value>)',
+        line: 'rgb(var(--color-line) / <alpha-value>)',
+        text: 'rgb(var(--color-text) / <alpha-value>)',
+        muted: 'rgb(var(--color-muted) / <alpha-value>)',
+        faint: 'rgb(var(--color-faint) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        'accent-2': 'rgb(var(--color-accent-2) / <alpha-value>)',
+        'on-accent': 'rgb(var(--color-on-accent) / <alpha-value>)',
+        scrim: 'rgb(var(--color-scrim) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
@@ -24,9 +26,9 @@ export default {
         shell: '1180px',
       },
       boxShadow: {
-        glow: '0 0 0 1px rgba(63,224,255,0.18), 0 18px 60px -22px rgba(63,224,255,0.35)',
-        'glow-violet': '0 0 0 1px rgba(138,107,255,0.20), 0 18px 60px -22px rgba(138,107,255,0.35)',
-        card: '0 30px 60px -30px rgba(0,0,0,0.8)',
+        glow: 'var(--shadow-glow)',
+        'glow-violet': 'var(--shadow-glow-violet)',
+        card: 'var(--shadow-card)',
       },
       keyframes: {
         drift: {

@@ -1,8 +1,46 @@
-import { GraduationCap, Award } from 'lucide-react'
+import { Award } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Section } from './Section'
 import { stagger, staggerItem } from './Reveal'
 import { useLang } from '../i18n/LanguageContext'
+
+const universityLogos = {
+  anadolu: {
+    src: '/universities/anadolu-logo.png',
+    surface: 'bg-white',
+    imageClass: 'w-[4.5rem]',
+  },
+  gaziantep: {
+    src: '/universities/gaziantep-logo.png',
+    surface: 'bg-white',
+    imageClass: 'h-11 w-11',
+  },
+  halmstad: {
+    src: '/universities/halmstad-logo.svg',
+    surface: 'bg-[#071b33]',
+    imageClass: 'w-[4.5rem]',
+  },
+}
+
+function UniversityLogo({ id }) {
+  const logo = universityLogos[id]
+  if (!logo) return null
+
+  return (
+    <span
+      aria-hidden="true"
+      className={`grid h-14 w-[5.5rem] flex-none place-items-center overflow-hidden rounded-xl border border-line/80 p-2 ${logo.surface}`}
+    >
+      <img
+        src={logo.src}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className={`max-h-full object-contain ${logo.imageClass}`}
+      />
+    </span>
+  )
+}
 
 export function Education() {
   const { t } = useLang()
@@ -20,16 +58,14 @@ export function Education() {
           viewport={{ once: true, margin: '0px 0px -10% 0px' }}
           className="grid gap-4 sm:grid-cols-2"
         >
-          {ed.items.map((item, i) => (
+          {ed.items.map((item) => (
             <motion.div
-              key={i}
+              key={`${item.schoolId}-${item.program}`}
               variants={staggerItem}
-              className="panel-card flex gap-4 p-5 transition-colors hover:border-accent/30"
+              className="panel-card flex w-full min-w-0 gap-4 p-5 transition-colors hover:border-accent/30"
             >
-              <span className="grid h-10 w-10 flex-none place-items-center rounded-xl border border-line bg-ink text-accent">
-                <GraduationCap size={18} />
-              </span>
-              <div>
+              <UniversityLogo id={item.schoolId} />
+              <div className="min-w-0">
                 <h3 className="font-display text-base font-semibold leading-snug text-text">{item.school}</h3>
                 <p className="mt-1 text-sm leading-snug text-muted">{item.program}</p>
                 <span className="mt-2 inline-block font-mono text-[11px] text-faint">{item.period}</span>
@@ -51,7 +87,7 @@ export function Education() {
             <motion.div
               key={i}
               variants={staggerItem}
-              className="group flex items-center gap-3 rounded-xl border border-line bg-panel/50 px-4 py-3.5 backdrop-blur-sm transition-colors hover:border-accent/30"
+              className="group flex w-full min-w-0 items-center gap-3 rounded-xl border border-line bg-panel/50 px-4 py-3.5 backdrop-blur-sm transition-colors hover:border-accent/30"
             >
               <Award size={16} className="flex-none text-accent/70" />
               <div className="min-w-0">

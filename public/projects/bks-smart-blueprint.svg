@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1440" role="img" aria-labelledby="title desc">
+  <title id="title">Connected facade control blueprint</title>
+  <desc id="desc">A fictional dark device control interface for a connected glass facade, lighting, and scenes without real device identifiers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="76" y1="0" x2="644" y2="1440" gradientUnits="userSpaceOnUse"><stop stop-color="#101621"/><stop offset=".5" stop-color="#0A0C10"/><stop offset="1" stop-color="#12101B"/></linearGradient>
+    <linearGradient id="accent" x1="100" y1="170" x2="620" y2="1240" gradientUnits="userSpaceOnUse"><stop stop-color="#3FE0FF"/><stop offset="1" stop-color="#8A6BFF"/></linearGradient>
+    <linearGradient id="glass" x1="208" y1="400" x2="520" y2="780" gradientUnits="userSpaceOnUse"><stop stop-color="#3FE0FF" stop-opacity=".18"/><stop offset="1" stop-color="#8A6BFF" stop-opacity=".06"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(356 600) rotate(90) scale(500 460)" gradientUnits="userSpaceOnUse"><stop stop-color="#3FE0FF" stop-opacity=".13"/><stop offset="1" stop-color="#3FE0FF" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0v48" fill="none" stroke="#3FE0FF" stroke-opacity=".055"/><path d="M12 0v48M24 0v48M36 0v48M0 12h48M0 24h48M0 36h48" fill="none" stroke="#3FE0FF" stroke-opacity=".018"/></pattern>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".58"/></filter>
+    <style>.sans{font-family:Inter,ui-sans-serif,system-ui,sans-serif}.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}.muted{fill:#8B95A7}.faint{fill:#687486}.cyan{fill:#3FE0FF}.violet{fill:#8A6BFF}</style>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h720v1440H0z"/><path fill="url(#glow)" d="M0 0h720v1440H0z"/><path fill="url(#grid)" d="M0 0h720v1440H0z"/>
+  <path fill="none" stroke="#3FE0FF" stroke-opacity=".22" d="M28 76V28h48M644 28h48v48M28 1364v48h48M644 1412h48v-48"/>
+
+  <g transform="translate(48 58)">
+    <path fill="#111721" stroke="#293345" d="M16 0h592a16 16 0 0 1 16 16v74H0V16A16 16 0 0 1 16 0Z"/>
+    <path fill="#3FE0FF" fill-opacity=".11" d="M26 22h38v38H26z"/>
+    <path fill="none" stroke="url(#accent)" stroke-width="2.4" stroke-linecap="round" d="M34 50V32h22v18M40 32V26m10 6v-6M30 50h30M39 42h12"/>
+    <text x="82" y="36" class="mono" fill="#E7ECF3" font-size="16" font-weight="600" letter-spacing="2.8">SMART / DEVICE CONTROL</text>
+    <text x="82" y="59" class="mono faint" font-size="11" letter-spacing="1.8">SHEET 03 · CONNECTED FACADE</text>
+    <path fill="#3FE0FF" fill-opacity=".1" stroke="#3FE0FF" stroke-opacity=".36" d="M496 24h100a12 12 0 0 1 12 12v20a12 12 0 0 1-12 12H496a12 12 0 0 1-12-12V36a12 12 0 0 1 12-12Z"/>
+    <path fill="#3FE0FF" d="M504 43h6v6h-6z"/><text x="520" y="51" class="mono cyan" font-size="11" font-weight="600" letter-spacing="1.2">CONNECTED</text>
+  </g>
+
+  <g transform="translate(48 174)">
+    <text class="sans" fill="#E7ECF3" font-size="34" font-weight="700">Facade studio</text>
+    <text y="34" dy="1.2em" class="sans muted" font-size="15">A representative control surface for movement, light and scenes.</text>
+    <path d="M0 94h624" stroke="#283244"/><path d="M0 94h168" stroke="url(#accent)" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(48 306)" filter="url(#shadow)">
+    <path fill="#10151E" fill-opacity=".95" stroke="#293345" d="M18 0h588a18 18 0 0 1 18 18v544a18 18 0 0 1-18 18H18A18 18 0 0 1 0 562V18A18 18 0 0 1 18 0Z"/>
+    <text x="24" y="43" class="sans" fill="#E7ECF3" font-size="18" font-weight="650">Zone A · folding glass</text>
+    <text x="24" y="66" class="mono faint" font-size="10" letter-spacing="1.4">REPRESENTATIVE MECHANISM</text>
+    <path fill="#3FE0FF" fill-opacity=".08" stroke="#3FE0FF" stroke-opacity=".3" d="M514 24h84a10 10 0 0 1 10 10v25a10 10 0 0 1-10 10h-84a10 10 0 0 1-10-10V34a10 10 0 0 1 10-10Z"/><text x="529" y="52" class="mono cyan" font-size="10" font-weight="600">BLE LINK</text>
+    <g transform="translate(78 112)">
+      <path fill="url(#glass)" stroke="#3FE0FF" stroke-opacity=".5" stroke-width="2" d="M0 24 111 0v292L0 316Zm111-24h111v292H111Zm111 0 111 24v292l-111-24Zm111 24 111 43v292l-111-43Z"/>
+      <path fill="none" stroke="#8A6BFF" stroke-opacity=".5" stroke-width="2" d="M111 0v292M222 0v292M333 24v292"/>
+      <path fill="none" stroke="#3FE0FF" stroke-opacity=".25" d="M0 104h444M0 196h444"/>
+      <path fill="none" stroke="#3FE0FF" stroke-width="3" stroke-linecap="round" d="M0 340h444"/>
+      <path fill="#3FE0FF" d="M-5 335H5v10H-5zm106 0h20v10h-20zm111 0h20v10h-20zm111 0h20v10h-20zm106 0h10v10h-10z"/>
+      <g stroke="#8A6BFF" stroke-width="2" fill="none" stroke-linecap="round">
+        <path d="M452 114q32 36 0 72"/><path d="M465 100q48 50 0 100" opacity=".65"/><path d="M478 87q64 63 0 126" opacity=".35"/>
+      </g>
+      <text x="222" y="388" text-anchor="middle" class="mono faint" font-size="10" letter-spacing="1.8">4-PANEL MOTION STUDY</text>
+    </g>
+    <g transform="translate(24 510)">
+      <text class="mono faint" font-size="10" letter-spacing="1.4">OPEN POSITION</text><text x="552" class="mono cyan" font-size="12" font-weight="600">68%</text>
+      <path fill="none" stroke="#283244" stroke-width="10" stroke-linecap="round" d="M0 28h576"/><path fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" d="M0 28h392"/>
+      <path fill="#E7ECF3" stroke="#3FE0FF" stroke-width="3" d="M382 18h20v20h-20z"/>
+    </g>
+  </g>
+
+  <g transform="translate(48 922)">
+    <text class="mono faint" font-size="10" letter-spacing="2">QUICK ACTIONS</text>
+    <g transform="translate(0 28)">
+      <path fill="#121923" stroke="#3FE0FF" stroke-opacity=".38" d="M16 0h176a16 16 0 0 1 16 16v134a16 16 0 0 1-16 16H16A16 16 0 0 1 0 150V16A16 16 0 0 1 16 0Z"/>
+      <path fill="#3FE0FF" fill-opacity=".12" d="M24 24h44v44H24z"/><path fill="none" stroke="#3FE0FF" stroke-width="2.5" d="M34 48h24M46 36v24"/>
+      <text x="24" y="104" class="sans" fill="#E7ECF3" font-size="17" font-weight="650">Open</text><text x="24" y="130" class="sans muted" font-size="13">Move to 100%</text>
+      <path fill="#151725" stroke="#8A6BFF" stroke-opacity=".42" d="M240 0h176a16 16 0 0 1 16 16v134a16 16 0 0 1-16 16H240a16 16 0 0 1-16-16V16a16 16 0 0 1 16-16Z"/>
+      <path fill="#8A6BFF" fill-opacity=".12" d="M248 24h44v44h-44z"/><path fill="none" stroke="#8A6BFF" stroke-width="2.5" d="M258 46h24"/>
+      <text x="248" y="104" class="sans" fill="#E7ECF3" font-size="17" font-weight="650">Pause</text><text x="248" y="130" class="sans muted" font-size="13">Hold position</text>
+      <path fill="#121923" stroke="#3FE0FF" stroke-opacity=".38" d="M464 0h144a16 16 0 0 1 16 16v134a16 16 0 0 1-16 16H464a16 16 0 0 1-16-16V16a16 16 0 0 1 16-16Z"/>
+      <path fill="#3FE0FF" fill-opacity=".12" d="M488 24h44v44h-44z"/><path fill="none" stroke="#3FE0FF" stroke-width="2.5" d="M498 46h24"/>
+      <text x="488" y="104" class="sans" fill="#E7ECF3" font-size="17" font-weight="650">Close</text><text x="488" y="130" class="sans muted" font-size="13">Return to 0%</text>
+    </g>
+  </g>
+
+  <g transform="translate(48 1142)">
+    <path fill="#10151E" fill-opacity=".95" stroke="#293345" d="M18 0h588a18 18 0 0 1 18 18v144a18 18 0 0 1-18 18H18A18 18 0 0 1 0 162V18A18 18 0 0 1 18 0Z"/>
+    <text x="24" y="42" class="sans" fill="#E7ECF3" font-size="18" font-weight="650">Ambient light</text><text x="552" y="42" class="mono cyan" font-size="12" font-weight="600">72%</text>
+    <path fill="none" stroke="#283244" stroke-width="12" stroke-linecap="round" d="M24 84h552"/><path fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" d="M24 84h397"/><circle cx="421" cy="84" r="15" fill="#E7ECF3" stroke="#8A6BFF" stroke-width="4"/>
+    <path fill="#3FE0FF" fill-opacity=".08" d="M24 116h164v34H24z"/><text x="42" y="138" class="mono cyan" font-size="10" font-weight="600" letter-spacing="1.2">SCENE / EVENING</text>
+  </g>
+
+  <g transform="translate(70 1366)" class="mono" font-size="10" letter-spacing="1.4">
+    <text class="faint">LOCAL CONTROL</text><path d="M120-4h42" stroke="#3FE0FF" stroke-opacity=".5"/><path fill="#3FE0FF" d="M160-8h8v8h-8z"/><text x="182" class="cyan">WIRELESS LINK</text><path d="M310-4h42" stroke="#8A6BFF" stroke-opacity=".5"/><path fill="#8A6BFF" d="M350-8h8v8h-8z"/><text x="372" class="violet">DEVICE STATE</text>
+  </g>
+</svg>

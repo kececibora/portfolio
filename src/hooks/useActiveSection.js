@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 
 // Tracks which section id is currently in view for navbar highlighting.
 export function useActiveSection(ids) {
-  const [active, setActive] = useState(ids[0])
+  // No section is selected while the visitor is still in the hero.
+  const [active, setActive] = useState(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(

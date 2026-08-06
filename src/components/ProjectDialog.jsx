@@ -13,7 +13,7 @@ const slide = {
 
 // Modal project browser: one group of apps, arrows/swipe/keyboard to move
 // between them. Transform/opacity only — cheap on low-end phones.
-export function ProjectDialog({ group, labels, soon, onClose }) {
+export function ProjectDialog({ group, labels, onClose }) {
   const items = group.items
   const [[index, dir], setState] = useState([0, 0])
   const reduce = useReducedMotion()
@@ -29,12 +29,27 @@ export function ProjectDialog({ group, labels, soon, onClose }) {
       if (e.key === 'Escape') onClose()
       else if (e.key === 'ArrowRight') paginate(1)
       else if (e.key === 'ArrowLeft') paginate(-1)
+      else if (e.key === 'Tab') {
+        const focusable = panelRef.current?.querySelectorAll(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        )
+        if (!focusable?.length) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
     }
     window.addEventListener('keydown', onKey)
     const prevFocus = document.activeElement
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
-    panelRef.current?.focus({ preventScroll: true })
+    panelRef.current?.querySelector('button')?.focus({ preventScroll: true })
     return () => {
       window.removeEventListener('keydown', onKey)
       document.body.style.overflow = prevOverflow
@@ -52,7 +67,7 @@ export function ProjectDialog({ group, labels, soon, onClose }) {
       exit={reduce ? undefined : { opacity: 0 }}
       transition={{ duration: 0.18 }}
       onClick={onClose}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-3 sm:p-6"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-scrim/95 p-3 sm:p-6"
     >
       <motion.div
         ref={panelRef}
@@ -70,13 +85,13 @@ export function ProjectDialog({ group, labels, soon, onClose }) {
         {/* header */}
         <div className="flex items-center gap-3 border-b border-line bg-panel-2/80 px-4 py-3 sm:px-5">
           <span className="label">{group.title}</span>
-          <span className="ml-auto font-mono text-xs text-faint">
+          <span className="ml-auto whitespace-nowrap font-mono text-xs text-faint">
             {index + 1} / {items.length}
           </span>
           <button
             type="button"
             onClick={onClose}
-            aria-label="Kapat"
+            aria-label={labels.close}
             className="btn-3d-dark btn-3d grid h-9 w-9 place-items-center !rounded-lg"
           >
             <X size={16} />
@@ -101,7 +116,7 @@ export function ProjectDialog({ group, labels, soon, onClose }) {
                 if (info.offset.x < -64) paginate(1)
                 else if (info.offset.x > 64) paginate(-1)
               }}
-              className="grid md:grid-cols-[0.85fr_1.15fr]"
+              className="grid touch-pan-y md:grid-cols-[0.85fr_1.15fr]"
             >
               {/* visual side */}
               <div className="relative flex items-center justify-center border-b border-line bg-ink-2 p-5 md:border-b-0 md:border-r">
@@ -142,18 +157,8 @@ export function ProjectDialog({ group, labels, soon, onClose }) {
                   ))}
                 </ul>
 
-                <div className="mt-6">
-                  {item.url ? (
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn-3d px-4 py-2.5 text-sm"
-                    >
-                      Google Play
-                      <ArrowUpRight size={15} />
-                    </a>
-                  ) : item.status ? (
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  {item.status && (
                     <span className="inline-flex items-center gap-2 rounded-lg border border-accent-2/40 bg-accent-2/10 px-3 py-1.5 font-mono text-xs text-accent-2">
                       <span className="relative flex h-1.5 w-1.5">
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-2 opacity-60" />
@@ -161,7 +166,22 @@ export function ProjectDialog({ group, labels, soon, onClose }) {
                       </span>
                       {item.status}
                     </span>
-                  ) : null}
+                  )}
+                  {item.url && (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-3d px-4 py-2.5 text-sm"
+                    >
+                      {item.url.includes('apps.apple.com')
+                        ? 'App Store'
+                        : item.url.includes('play.google.com')
+                          ? 'Google Play'
+                          : labels.open}
+                      <ArrowUpRight size={15} />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -187,10 +207,15 @@ export function ProjectDialog({ group, labels, soon, onClose }) {
                 onClick={() => goto(i)}
                 aria-label={`${labels.goto}: ${it.name}`}
                 aria-current={i === index}
-                className={`h-2 rounded-full transition-all duration-200 ${
-                  i === index ? 'w-6 bg-accent' : 'w-2 bg-line hover:bg-faint'
-                }`}
-              />
+                className="group grid h-7 w-7 place-items-center rounded-full"
+              >
+                <span
+                  aria-hidden
+                  className={`h-2 rounded-full transition-all duration-200 ${
+                    i === index ? 'w-5 bg-accent' : 'w-2 bg-line group-hover:bg-faint'
+                  }`}
+                />
+              </button>
             ))}
           </div>
 

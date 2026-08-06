@@ -31,9 +31,13 @@ src/
   components/
     Background.jsx        # hareketli gradient + blueprint grid
     Navbar.jsx            # sticky + scroll blur + aktif bölüm + TR/EN + mobil menü
-    Hero.jsx / Terminal.jsx
-    About / Skills / Experience / Projects / Process / Education / Contact / Footer
+    Hero.jsx / ArchitectureMap.jsx  # hareketli Flutter → ERP → IoT sistem haritası
+    Skills / Experience / Projects / Education / Contact / Footer
     Section.jsx, Reveal.jsx  # paylaşılan yapı + animasyon yardımcıları
+public/
+  brand-mark.svg, favicon.svg       # path tabanlı RBK monogramı
+  social-card.svg/.png              # 1200×630 sosyal paylaşım görseli
+  projects/*-blueprint.svg          # anonim, özgün proje illüstrasyonları
 ```
 
 ## İçeriği düzenleme

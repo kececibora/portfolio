@@ -4,6 +4,10 @@
 export const content = {
   tr: {
     nav: {
+      skip: 'Ana içeriğe geç',
+      menu: 'Menü',
+      themeLight: 'Gündüz temasına geç',
+      themeDark: 'Gece temasına geç',
       about: 'Hakkımda',
       skills: 'Yetenekler',
       experience: 'Deneyim',
@@ -14,7 +18,7 @@ export const content = {
     },
 
     hero: {
-      tag: 'Ankara, Türkiye · Açık projelere uygun',
+      tag: 'Ankara, Türkiye',
       name: 'Ramazan Bora Keçeci',
       roles: [
         'Flutter Developer',
@@ -26,6 +30,15 @@ export const content = {
       ctaProjects: 'Projelerimi Gör',
       ctaContact: 'İletişime Geç',
       ctaCv: 'CV İndir',
+      architecture: {
+        status: '4 katman bağlı',
+        core: 'Ürün sistemi',
+      },
+      metrics: [
+        { k: '4+', v: 'YIL DENEYİM' },
+        { k: '15+', v: 'CANLI SİSTEM' },
+        { k: 'AI', v: 'OTOMASYON' },
+      ],
     },
 
     about: {
@@ -36,7 +49,7 @@ export const content = {
         'BKS Holding’de Logo Tiger ERP ile entegre, ölçeklenebilir mobil ve backend sistemler geliştirdim ve iş süreçlerini optimize ettim. Flutter, Node.js ve gömülü sistemler (Arduino, ESP32) konusunda deneyimliyim; odağım gerçek problem çözme ve performans optimizasyonu.',
       ],
       facts: [
-        { k: '5+', v: 'yıl mühendislik + yazılım deneyimi' },
+        { k: '4+', v: 'yıl mühendislik + yazılım deneyimi' },
         { k: '15+', v: 'üretime alınmış uygulama ve entegrasyon' },
         { k: 'ERP', v: 'Logo Tiger gerçek zamanlı senkronizasyon' },
       ],
@@ -84,6 +97,17 @@ export const content = {
       now: 'Devam ediyor',
       items: [
         {
+          role: 'Software Developer',
+          company: 'Bağımsız / Proje bazlı',
+          period: '2024 — Devam ediyor',
+          bullets: [
+            'Belediye hizmetleri için su tüketimi ve faturalandırma, ödeme entegrasyonları ve veri görselleştirme ekranlarını kapsayan Flutter uygulamaları geliştirdim.',
+            'Saha personeli için QR kodla tahsilat, çevrimdışı çalışma ve kendi yazıcı sürücüsü fork’um üzerinden Bluetooth ile fiş yazdırma özellikleri geliştirdim.',
+            'Türk Go Oyuncuları Derneği için Go Baduk Weiqi Timer’ı gönüllü olarak tasarlayıp geliştirdim; Google Play ve App Store’da yayınladım.',
+            'Kapan — Siege Duel’ı saf Dart oyun motoru, üç seviyeli yapay zekâ ve Firebase üzerinde eşleştirme, Elo ve liderlik tablosu içeren dereceli çevrimiçi modla geliştirip App Store’da yayınladım.',
+          ],
+        },
+        {
           role: 'Flutter Developer',
           company: 'BKS Holding',
           period: '01.2023 — 06.2026',
@@ -96,17 +120,6 @@ export const content = {
             'Teklif ve sipariş çıktıları için PDF/Excel üretimi, grafik tabanlı raporlama ve dashboard ekranları geliştirdim.',
             'Üretim tarafında kullanılan sistemler için arıza tespiti, test süreçleri ve güncelleme araçları üzerine çalışmalar yaptım.',
             'Flutter arayüzlerini Firebase ve Node.js servisleriyle birleştirerek sahada gerçekten kullanılan, uçtan uca çalışan iş uygulamaları geliştirdim.',
-          ],
-        },
-        {
-          role: 'Software Developer',
-          company: 'Bağımsız / Proje bazlı',
-          period: '2024 — Devam ediyor',
-          bullets: [
-            'Belediyeler için su kullanımını faturalandıran, ödeme ve veri takibini sade ekranlarda toplayan Flutter uygulamaları geliştirdim.',
-            'Eskişehir Go Oyuncuları Derneği için Go / Baduk turnuva zamanlayıcısı gotimer’ı yapıp Google Play’de yayınladım; gerçek kullanıcılardan gelen geri bildirimlerle güncellemeye devam ediyorum.',
-            'Reklamsız ve tamamen çevrimdışı çalışan bir satranç antrenman uygulaması (Chess Trainer) geliştirdim.',
-            'ESP32 ve Arduino ile Bluetooth ve sensör tabanlı donanım prototipleri geliştirdim.',
           ],
         },
         {
@@ -131,7 +144,7 @@ export const content = {
       cta: 'İncele',
       appsSuffix: 'uygulama',
       soon: 'Yakında',
-      dialog: { prev: 'Önceki proje', next: 'Sonraki proje', goto: 'Projeye git' },
+      dialog: { prev: 'Önceki proje', next: 'Sonraki proje', goto: 'Projeye git', close: 'Kapat', open: 'Projeyi aç' },
       groups: [
         {
           key: 'bks',
@@ -143,7 +156,7 @@ export const content = {
           key: 'indie',
           title: 'Bağımsız Uygulamalar',
           blurb: 'Go turnuva saatinden strateji oyununa ve belediye servislerine — kendi başıma tasarlayıp yayınladığım, reklamsız uygulamalar.',
-          codes: ['app/go-timer', 'game/kapan', 'app/chess-trainer', 'gov/municipal-suite'],
+          codes: ['app/go-timer', 'game/kapan', 'gov/municipal-suite', 'app/chess-trainer'],
         },
       ],
       items: [
@@ -158,7 +171,7 @@ export const content = {
             'Sahada bayilerin her gün kullandığı B2B platform',
           ],
           code: 'platform/bks-panel',
-          image: '/projects/bks-panel.webp',
+          image: '/projects/bks-panel-blueprint.svg',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksbayiapp',
         },
         {
@@ -172,7 +185,7 @@ export const content = {
             'Firebase bildirimleriyle anlık durum takibi',
           ],
           code: 'app/bks-flow',
-          image: '/projects/bks-flow.webp',
+          image: '/projects/bks-flow-blueprint.svg',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksflow',
         },
         {
@@ -186,7 +199,7 @@ export const content = {
             'Sahadaki üretim sistemleriyle birlikte çalışır',
           ],
           code: 'app/bks-smart',
-          image: '/projects/bks-smart.webp',
+          image: '/projects/bks-smart-blueprint.svg',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bks',
         },
         {
@@ -201,7 +214,6 @@ export const content = {
           ],
           code: 'gov/municipal-suite',
           image: '/projects/municipal.webp',
-          wide: true,
         },
         {
           name: 'Go / Baduk Tournament Timer',
@@ -233,6 +245,14 @@ export const content = {
           image: '/projects/kapan.webp',
         },
         {
+          name: 'Embedded Systems & ESP32',
+          desc: 'ESP32, Arduino, Bluetooth ve sensör tabanlı yazılım-donanım entegrasyonları; üretim birimleri için işleri kolaylaştıran arıza tespit ve güncelleme otomasyonları.',
+          tags: ['ESP32', 'Arduino', 'Bluetooth', 'Embedded'],
+          code: 'hardware/esp32-lab',
+          image: '/projects/esp32-lab-blueprint.svg',
+          wide: true,
+        },
+        {
           name: 'Chess Trainer',
           desc: 'Reklamsız ve çevrimdışı satranç antrenörü: ~20.000 Lichess bulmacası, körleme antrenmanı, açılışlar ve yapay zekâya karşı oyun — yeni güncellemeyle 15 dilde, Google Play’de yayında.',
           features: [
@@ -245,14 +265,6 @@ export const content = {
           code: 'app/chess-trainer',
           image: '/projects/chess.webp',
           url: 'https://play.google.com/store/apps/details?id=com.borakececi.chess_trainer',
-        },
-        {
-          name: 'Embedded & ESP32 Experiments',
-          desc: 'ESP32, Arduino, Bluetooth ve sensör tabanlı yazılım-donanım entegrasyonları; üretim birimleri için işleri kolaylaştıran arıza tespit ve güncelleme otomasyonları.',
-          tags: ['ESP32', 'Arduino', 'Bluetooth', 'Embedded'],
-          code: 'hardware/esp32-lab',
-          image: '/projects/esp32-pinout.webp',
-          wide: true,
         },
       ],
     },
@@ -273,10 +285,10 @@ export const content = {
       eyebrow: 'Eğitim',
       title: 'Akademik geçmiş',
       items: [
-        { school: 'Anadolu Üniversitesi', program: 'İnşaat Mühendisliği — Lisans (%100 İngilizce)', period: '2013 — 2019' },
-        { school: 'Gaziantep Üniversitesi', program: 'İş Sağlığı ve Güvenliği — Yüksek Lisans', period: '2021 — 2022' },
-        { school: 'Halmstad University', program: 'İnşaat Mühendisliği — Erasmus Mobility Programme', period: '2018 — 2019' },
-        { school: 'Anadolu Üniversitesi', program: 'Bilgisayar Programcılığı', period: 'Devam ediyor' },
+        { schoolId: 'anadolu', school: 'Anadolu Üniversitesi', program: 'İnşaat Mühendisliği — Lisans (%100 İngilizce)', period: '2013 — 2019' },
+        { schoolId: 'gaziantep', school: 'Gaziantep Üniversitesi', program: 'İş Sağlığı ve Güvenliği — Yüksek Lisans', period: '2021 — 2022' },
+        { schoolId: 'halmstad', school: 'Halmstad University', program: 'İnşaat Mühendisliği — Erasmus Mobility Programme', period: '2018 — 2019' },
+        { schoolId: 'anadolu', school: 'Anadolu Üniversitesi', program: 'Bilgisayar Programcılığı', period: 'Devam ediyor' },
       ],
     },
 
@@ -320,6 +332,10 @@ export const content = {
 
   en: {
     nav: {
+      skip: 'Skip to main content',
+      menu: 'Menu',
+      themeLight: 'Switch to light theme',
+      themeDark: 'Switch to dark theme',
       about: 'About',
       skills: 'Skills',
       experience: 'Experience',
@@ -330,7 +346,7 @@ export const content = {
     },
 
     hero: {
-      tag: 'Ankara, Türkiye · Open to new projects',
+      tag: 'Ankara, Türkiye',
       name: 'Ramazan Bora Keçeci',
       roles: [
         'Flutter Developer',
@@ -342,6 +358,15 @@ export const content = {
       ctaProjects: 'View Projects',
       ctaContact: 'Get in Touch',
       ctaCv: 'Download CV',
+      architecture: {
+        status: '4 layers connected',
+        core: 'Product system',
+      },
+      metrics: [
+        { k: '4+', v: 'YEARS EXPERIENCE' },
+        { k: '15+', v: 'SHIPPED SYSTEMS' },
+        { k: 'AI', v: 'AUTOMATION' },
+      ],
     },
 
     about: {
@@ -352,7 +377,7 @@ export const content = {
         'At BKS Holding I developed scalable mobile and backend systems, integrating with Logo Tiger ERP and optimizing business operations. Experienced in Flutter, Node.js, and embedded systems (Arduino, ESP32), with a focus on real-world problem solving and performance optimization.',
       ],
       facts: [
-        { k: '5+', v: 'years across engineering & software' },
+        { k: '4+', v: 'years across engineering & software' },
         { k: '15+', v: 'shipped apps & integrations' },
         { k: 'ERP', v: 'Logo Tiger real-time sync' },
       ],
@@ -400,6 +425,17 @@ export const content = {
       now: 'Present',
       items: [
         {
+          role: 'Software Developer',
+          company: 'Independent / Project-based',
+          period: '2024 — Present',
+          bullets: [
+            'Developed Flutter applications for municipal services, covering water-usage billing, payment integrations, and data-visualization dashboards.',
+            'Built field-collection features with QR-code scanning, offline support, and Bluetooth receipt printing through my own fork of the printer driver.',
+            'Volunteered to design, develop, and publish Go Baduk Weiqi Timer for the Turkish Go Players Association on Google Play and the App Store.',
+            'Designed and shipped Kapan — Siege Duel with a pure-Dart game engine, three-level AI, and ranked Firebase multiplayer including matchmaking, Elo, and leaderboards.',
+          ],
+        },
+        {
           role: 'Flutter Developer',
           company: 'BKS Holding',
           period: 'Jan 2023 — Jun 2026',
@@ -412,17 +448,6 @@ export const content = {
             'Developed PDF/Excel output for quotes and orders, along with chart-based reporting and dashboard screens.',
             'Worked on fault detection, testing, and update tooling for systems used in production.',
             'Developed end-to-end business applications actually used in the field, combining Flutter interfaces with Firebase and Node.js services.',
-          ],
-        },
-        {
-          role: 'Software Developer',
-          company: 'Independent / Project-based',
-          period: '2024 — Present',
-          bullets: [
-            'Built Flutter apps for municipalities that handle water-usage billing, payments, and data tracking in simple, clear screens.',
-            'Built and published gotimer, a Go / Baduk tournament timer, on Google Play for the Eskişehir Go Players Association — and keep shipping updates from real user feedback.',
-            'Built Chess Trainer, an ad-free, fully offline chess training app.',
-            'Developed Bluetooth and sensor-based hardware prototypes on ESP32 and Arduino.',
           ],
         },
         {
@@ -447,7 +472,7 @@ export const content = {
       cta: 'Explore',
       appsSuffix: 'apps',
       soon: 'Soon',
-      dialog: { prev: 'Previous project', next: 'Next project', goto: 'Go to project' },
+      dialog: { prev: 'Previous project', next: 'Next project', goto: 'Go to project', close: 'Close', open: 'Open project' },
       groups: [
         {
           key: 'bks',
@@ -459,7 +484,7 @@ export const content = {
           key: 'indie',
           title: 'Independent Apps',
           blurb: 'From a Go tournament clock to a strategy game and municipal services — ad-free apps I design and ship on my own.',
-          codes: ['app/go-timer', 'game/kapan', 'app/chess-trainer', 'gov/municipal-suite'],
+          codes: ['app/go-timer', 'game/kapan', 'gov/municipal-suite', 'app/chess-trainer'],
         },
       ],
       items: [
@@ -474,7 +499,7 @@ export const content = {
             'The B2B platform dealers use in the field every day',
           ],
           code: 'platform/bks-panel',
-          image: '/projects/bks-panel.webp',
+          image: '/projects/bks-panel-blueprint.svg',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksbayiapp',
         },
         {
@@ -488,7 +513,7 @@ export const content = {
             'Live status updates via Firebase notifications',
           ],
           code: 'app/bks-flow',
-          image: '/projects/bks-flow.webp',
+          image: '/projects/bks-flow-blueprint.svg',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksflow',
         },
         {
@@ -502,7 +527,7 @@ export const content = {
             'Works with the production systems in the field',
           ],
           code: 'app/bks-smart',
-          image: '/projects/bks-smart.webp',
+          image: '/projects/bks-smart-blueprint.svg',
           url: 'https://play.google.com/store/apps/details?id=com.bkscam.bks',
         },
         {
@@ -517,7 +542,6 @@ export const content = {
           ],
           code: 'gov/municipal-suite',
           image: '/projects/municipal.webp',
-          wide: true,
         },
         {
           name: 'Go / Baduk Tournament Timer',
@@ -549,6 +573,14 @@ export const content = {
           image: '/projects/kapan.webp',
         },
         {
+          name: 'Embedded Systems & ESP32',
+          desc: 'ESP32, Arduino, Bluetooth, and sensor-based hardware-software integration — including fault-detection and update automations that streamline work for production units.',
+          tags: ['ESP32', 'Arduino', 'Bluetooth', 'Embedded'],
+          code: 'hardware/esp32-lab',
+          image: '/projects/esp32-lab-blueprint.svg',
+          wide: true,
+        },
+        {
           name: 'Chess Trainer',
           desc: 'An ad-free, offline chess trainer: ~20,000 Lichess puzzles, blindfold training, openings, and play vs AI — now in 15 languages, live on Google Play.',
           features: [
@@ -561,14 +593,6 @@ export const content = {
           code: 'app/chess-trainer',
           image: '/projects/chess.webp',
           url: 'https://play.google.com/store/apps/details?id=com.borakececi.chess_trainer',
-        },
-        {
-          name: 'Embedded & ESP32 Experiments',
-          desc: 'ESP32, Arduino, Bluetooth, and sensor-based hardware-software integration — including fault-detection and update automations that streamline work for production units.',
-          tags: ['ESP32', 'Arduino', 'Bluetooth', 'Embedded'],
-          code: 'hardware/esp32-lab',
-          image: '/projects/esp32-pinout.webp',
-          wide: true,
         },
       ],
     },
@@ -589,10 +613,10 @@ export const content = {
       eyebrow: 'Education',
       title: 'Academic background',
       items: [
-        { school: 'Anadolu University', program: 'Civil Engineering — Bachelor’s Degree (100% English)', period: '2013 — 2019' },
-        { school: 'Gaziantep University', program: 'Occupational Health & Safety — Master’s Degree', period: '2021 — 2022' },
-        { school: 'Halmstad University', program: 'Civil Engineering — Erasmus Mobility Programme', period: '2018 — 2019' },
-        { school: 'Anadolu University', program: 'Computer Programming', period: 'Present' },
+        { schoolId: 'anadolu', school: 'Anadolu University', program: 'Civil Engineering — Bachelor’s Degree (100% English)', period: '2013 — 2019' },
+        { schoolId: 'gaziantep', school: 'Gaziantep University', program: 'Occupational Health & Safety — Master’s Degree', period: '2021 — 2022' },
+        { schoolId: 'halmstad', school: 'Halmstad University', program: 'Civil Engineering — Erasmus Mobility Programme', period: '2018 — 2019' },
+        { schoolId: 'anadolu', school: 'Anadolu University', program: 'Computer Programming', period: 'Present' },
       ],
     },
 

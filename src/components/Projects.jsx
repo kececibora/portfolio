@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { ChevronRight, Maximize2, X } from 'lucide-react'
 import { Section } from './Section'
@@ -53,6 +53,7 @@ export function Projects() {
   const reduce = useReducedMotion()
   const [openGroup, setOpenGroup] = useState(null) // resolved group | null
   const [lightbox, setLightbox] = useState(null) // { src, alt } | null
+  const lightboxCloseRef = useRef(null)
 
   const byCode = Object.fromEntries(p.items.map((it) => [it.code, it]))
   const groups = p.groups.map((g) => ({ ...g, items: g.codes.map((c) => byCode[c]).filter(Boolean) }))
@@ -61,18 +62,26 @@ export function Projects() {
   // lightbox: close on Escape + lock background scroll while open
   useEffect(() => {
     if (!lightbox) return
-    const onKey = (e) => e.key === 'Escape' && setLightbox(null)
+    const onKey = (e) => {
+      if (e.key === 'Escape') setLightbox(null)
+      else if (e.key === 'Tab') {
+        e.preventDefault()
+        lightboxCloseRef.current?.focus()
+      }
+    }
     window.addEventListener('keydown', onKey)
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
+    lightboxCloseRef.current?.focus({ preventScroll: true })
     return () => {
       window.removeEventListener('keydown', onKey)
       document.body.style.overflow = prev
+      lightbox.trigger?.focus({ preventScroll: true })
     }
   }, [lightbox])
 
   return (
-    <Section id="projects" index={3} eyebrow={p.eyebrow} title={p.title} note={p.note}>
+    <Section id="projects" index={1} eyebrow={p.eyebrow} title={p.title} note={p.note}>
       {/* the two families */}
       <motion.div
         variants={stagger}
@@ -82,13 +91,19 @@ export function Projects() {
         className="grid gap-5 md:grid-cols-2"
       >
         {groups.map((g) => (
-          <motion.button
+          <motion.article
             key={g.key}
-            type="button"
             variants={staggerItem}
-            onClick={() => setOpenGroup(g)}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-panel/50 text-left backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-glow"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-panel/50 text-left backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-glow focus-within:border-accent/50 focus-within:shadow-glow"
           >
+            <button
+              type="button"
+              onClick={() => setOpenGroup(g)}
+              aria-label={`${g.title} — ${p.cta}`}
+              className="absolute inset-0 z-30 cursor-pointer rounded-2xl focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
+            >
+              <span className="sr-only">{p.cta}</span>
+            </button>
             <CardFan items={g.items} />
 
             <div className="flex flex-1 flex-col p-5">
@@ -100,12 +115,12 @@ export function Projects() {
               </div>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{g.blurb}</p>
 
-              <span className="btn-3d mt-5 w-fit px-4 py-2.5 text-sm">
+              <span aria-hidden="true" className="btn-3d mt-5 w-fit px-4 py-2.5 text-sm">
                 {p.cta}
                 <ChevronRight size={16} className="transition-transform group-hover:translate-x-0.5" />
               </span>
             </div>
-          </motion.button>
+          </motion.article>
         ))}
       </motion.div>
 
@@ -131,11 +146,11 @@ export function Projects() {
             </span>
             <button
               type="button"
-              onClick={() => setLightbox({ src: esp32.image, alt: esp32.name })}
+              onClick={(event) => setLightbox({ src: esp32.image, alt: esp32.name, trigger: event.currentTarget })}
               aria-label={`${esp32.name} — ${p.enlarge}`}
-              className="absolute inset-0 z-20 flex items-start justify-end p-3 outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="absolute inset-0 z-20 flex items-start justify-end p-3 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
             >
-              <span className="flex items-center gap-1 rounded-lg border border-line/70 bg-ink/70 px-2 py-1 font-mono text-[10px] tracking-wide text-muted opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+              <span className="flex items-center gap-1 rounded-lg border border-line/70 bg-ink/80 px-2 py-1 font-mono text-[10px] tracking-wide text-muted opacity-100 backdrop-blur-sm transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
                 <Maximize2 size={12} />
                 {p.enlarge}
               </span>
@@ -163,7 +178,6 @@ export function Projects() {
           <ProjectDialog
             group={openGroup}
             labels={p.dialog}
-            soon={p.soon}
             onClose={() => setOpenGroup(null)}
           />
         )}
@@ -181,9 +195,10 @@ export function Projects() {
             exit={reduce ? undefined : { opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setLightbox(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/90 p-4 backdrop-blur-md sm:p-8"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-scrim/90 p-4 backdrop-blur-md sm:p-8"
           >
             <button
+              ref={lightboxCloseRef}
               type="button"
               onClick={() => setLightbox(null)}
               aria-label={p.close}

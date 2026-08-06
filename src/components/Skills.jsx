@@ -12,7 +12,7 @@ export function Skills() {
   const reduce = useReducedMotion()
 
   return (
-    <Section id="skills" index={1} eyebrow={s.eyebrow} title={s.title} note={s.note}>
+    <Section id="skills" index={3} eyebrow={s.eyebrow} title={s.title} note={s.note}>
       <motion.div
         variants={stagger}
         initial={reduce ? 'show' : 'hidden'}
@@ -26,7 +26,7 @@ export function Skills() {
             <motion.article
               key={cat.name}
               variants={staggerItem}
-              className="group relative overflow-hidden rounded-2xl border border-line bg-panel/60 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-glow"
+              className="blueprint-card crop group relative overflow-hidden rounded-2xl border border-line bg-panel/60 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-glow"
             >
               {/* corner index */}
               <span className="absolute right-4 top-4 font-mono text-[11px] text-faint transition-colors group-hover:text-accent/70">

@@ -66,7 +66,7 @@ export function Contact() {
           href={profile.github}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#a78bfa]/30 bg-[#a78bfa]/10 px-5 py-3.5 text-sm font-medium text-[#c4b5fd] transition-all hover:-translate-y-0.5 hover:border-[#a78bfa]/60 hover:text-white"
+          className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-accent-2/30 bg-accent-2/10 px-5 py-3.5 text-sm font-medium text-accent-2 transition-colors hover:border-accent-2/60 hover:text-text"
         >
           <Github size={16} /> GitHub
         </a>
@@ -74,7 +74,7 @@ export function Contact() {
           href={profile.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#38bdf8]/30 bg-[#38bdf8]/10 px-5 py-3.5 text-sm font-medium text-[#7dd3fc] transition-all hover:-translate-y-0.5 hover:border-[#38bdf8]/60 hover:text-white"
+          className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-accent/30 bg-accent/10 px-5 py-3.5 text-sm font-medium text-accent transition-colors hover:border-accent/60 hover:text-text"
         >
           <Linkedin size={16} /> LinkedIn
         </a>

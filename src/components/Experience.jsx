@@ -10,7 +10,7 @@ export function Experience() {
     <Section id="experience" index={2} eyebrow={e.eyebrow} title={e.title}>
       <div className="relative">
         {/* the spine */}
-        <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-accent/50 via-line to-transparent md:left-[calc(8rem+7px)]" />
+        <div className="absolute bottom-2 left-[7px] top-2 w-px bg-gradient-to-b from-accent/60 via-line to-transparent md:left-[calc(10rem+7px)]" />
 
         <div className="space-y-10">
           {e.items.map((item, i) => (
@@ -36,7 +36,11 @@ export function Experience() {
                     {/* mobile period */}
                     <span className="mt-1 block font-mono text-[11px] text-faint md:hidden">{item.period}</span>
 
-                    <ul className="mt-4 space-y-2.5">
+                    <ul
+                      className={`mt-4 grid gap-2.5 ${
+                        item.bullets.length > 5 ? 'lg:grid-cols-2 lg:gap-x-6' : ''
+                      }`}
+                    >
                       {item.bullets.map((b, j) => (
                         <li key={j} className="flex gap-3 text-sm leading-relaxed text-muted">
                           <span className="mt-2 h-1 w-1 flex-none rounded-full bg-accent/60" />
