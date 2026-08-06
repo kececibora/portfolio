@@ -100,10 +100,7 @@ export function Hero() {
             animate="show"
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <a
-              href="#projects"
-              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-5 py-3 text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5"
-            >
+            <a href="#projects" className="btn-3d group px-5 py-3 text-sm">
               {h.ctaProjects}
               <ArrowUpRight size={17} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>

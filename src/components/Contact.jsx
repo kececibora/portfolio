@@ -58,10 +58,7 @@ export function Contact() {
       </motion.div>
 
       <Reveal delay={0.1} className="mt-4 flex flex-col gap-3 sm:flex-row">
-        <a
-          href={`mailto:${profile.email}`}
-          className="group inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-5 py-3.5 text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5"
-        >
+        <a href={`mailto:${profile.email}`} className="btn-3d flex-1 px-5 py-3.5 text-sm">
           <Mail size={16} />
           {c.cta}
         </a>

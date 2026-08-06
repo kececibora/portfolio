@@ -1,0 +1,244 @@
+<title>Ramazan Bora Keçeci — CV</title>
+<style>
+  :root{
+    --surround:#ECEEF1; --surround-ink:#4A5261;
+    --paper:#FFFFFF; --ink:#191B1E; --gray:#4C5158; --light:#8A8F96;
+    --rule:#C9CDD2; --hair:#E4E6E9; --iconbg:#5E646B;
+  }
+  @media (prefers-color-scheme: dark){ :root{ --surround:#101318; --surround-ink:#9AA4B5; } }
+  :root[data-theme="dark"]{ --surround:#101318; --surround-ink:#9AA4B5; }
+  :root[data-theme="light"]{ --surround:#ECEEF1; --surround-ink:#4A5261; }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--surround); color:var(--ink);
+    font-family:"Avenir Next","Century Gothic","Segoe UI",-apple-system,Helvetica,Arial,sans-serif;
+    font-size:9pt; line-height:1.35;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  a{ color:inherit; }
+  .xp a{ text-decoration:underline; text-underline-offset:2px; }
+  .xp b{ font-weight:600; }
+
+  .toolbar{ position:fixed; top:14px; right:14px; z-index:50; }
+  .toolbar button{
+    font:600 12px/1 "Avenir Next",-apple-system,system-ui,sans-serif; letter-spacing:.03em;
+    padding:9px 15px; border-radius:999px; border:1px solid var(--rule);
+    background:var(--paper); color:var(--ink); cursor:pointer;
+    box-shadow:0 2px 10px rgba(15,23,32,.12);
+  }
+  .toolbar button:hover{ border-color:var(--ink); }
+  .toolbar button:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+
+  .sheet{ display:flex; flex-direction:column; align-items:center; gap:22px; padding:34px 12px 60px; }
+  .hint{ color:var(--surround-ink); font-size:11px; letter-spacing:.04em; }
+  .page{
+    width:210mm; min-height:296mm; background:var(--paper);
+    box-shadow:0 24px 60px -28px rgba(15,23,32,.35);
+    padding:9.5mm 12mm 7mm; display:flex; flex-direction:column;
+  }
+  @media (max-width: 850px){
+    .page{ transform:scale(.62); transform-origin:top center; margin-bottom:calc(-296mm * .38); }
+  }
+
+  /* ---------- header ---------- */
+  .head{ display:grid; grid-template-columns:44mm 1fr; gap:6mm; align-items:start; margin-bottom:4mm; }
+  .photo-wrap{ text-align:center; }
+  .photo{
+    width:36mm; height:36mm; border-radius:50%; object-fit:cover; object-position:50% 12%;
+    display:block; margin:1mm auto 2.5mm;
+  }
+  .loc{ display:inline-flex; align-items:center; gap:1.6mm; font-size:8.3pt; color:var(--ink); }
+  h1{
+    margin:1mm 0 0; font-size:22pt; font-weight:800; letter-spacing:.02em;
+    line-height:1.05; text-transform:uppercase;
+  }
+  .subtitle{ margin-top:1.6mm; font-size:11.5pt; letter-spacing:.14em; text-transform:uppercase; font-weight:400; color:var(--ink); }
+  .contacts{ margin-top:4mm; display:grid; grid-template-columns:1fr 1.15fr; gap:2.2mm 8mm; }
+  .c-item{ display:flex; align-items:center; gap:2.6mm; font-size:8.8pt; }
+  .c-item a{ text-decoration:underline; text-underline-offset:2px; }
+  .c-item .plain{ text-decoration:none; }
+  .cicon{
+    width:5.6mm; height:5.6mm; border-radius:50%; background:var(--iconbg); flex-shrink:0;
+    display:inline-flex; align-items:center; justify-content:center;
+  }
+  .cicon svg{ width:3.1mm; height:3.1mm; fill:#fff; }
+
+  /* ---------- body ---------- */
+  .cols{ flex:1; display:grid; grid-template-columns:57mm 1fr; gap:0; }
+  .left{ padding:2mm 6mm 0 0; border-right:1px solid var(--rule); }
+  .right{ padding:2mm 0 0 7mm; }
+
+  h2{
+    margin:0 0 2.6mm; font-size:12.5pt; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    padding-bottom:1.4mm; border-bottom:1px solid var(--hair);
+  }
+  section{ margin-bottom:3.6mm; }
+  .left section{ margin-bottom:4.6mm; }
+
+  .edu{ margin-bottom:2.2mm; }
+  .edu b{ font-size:9.3pt; font-weight:700; display:block; }
+  .edu span{ display:block; font-size:8.4pt; color:var(--gray); line-height:1.28; }
+
+  .plist{ margin:0; padding-left:4.6mm; }
+  .plist li{ margin-bottom:1.3mm; font-size:8.8pt; }
+  .plist li::marker{ color:var(--ink); }
+  .plist .prov{ color:var(--gray); }
+
+  .just{ text-align:justify; }
+  .summary p{ margin:0; font-size:9pt; }
+
+  .xp{ margin-bottom:2.4mm; break-inside:avoid; }
+  .xp-head{ display:flex; justify-content:space-between; align-items:baseline; gap:6mm; }
+  .xp-head h3{ margin:0; font-size:11pt; font-weight:700; letter-spacing:.03em; text-transform:uppercase; }
+  .xp-date{ font-size:9pt; color:var(--ink); white-space:nowrap; }
+  .xp-co{ margin:.8mm 0 1.4mm; font-size:9pt; }
+  .xp p, .xp .dash{ margin:0 0 .9mm; font-size:8.9pt; }
+  .dash{ padding-left:3.2mm; text-indent:-3.2mm; }
+  .dash::before{ content:"-\00a0"; }
+
+  .strip{ display:flex; gap:3mm; margin:2.2mm 0 .6mm; justify-content:flex-start; }
+  .shot{ text-align:center; }
+  .shot img{
+    height:26mm; width:auto; display:block; border-radius:1.2mm; border:1px solid var(--hair);
+  }
+  .shot .cap{ margin-top:.9mm; font-size:6.6pt; color:var(--light); letter-spacing:.04em; }
+
+  /* ---------- print ---------- */
+  @page{ size:A4; margin:0; }
+  @media print{
+    body{ background:#fff; }
+    .toolbar,.hint{ display:none !important; }
+    .sheet{ padding:0; gap:0; }
+    .page{ box-shadow:none; width:210mm; min-height:297mm; transform:none; margin:0; }
+  }
+</style>
+
+<div class="toolbar"><button onclick="window.print()">Print / PDF</button></div>
+
+<div class="sheet">
+  <div class="hint">A4 · 1 page · save via "Print / PDF"</div>
+  <div class="page">
+
+    <header class="head">
+      <div class="photo-wrap">
+        <img class="photo" src="data:image/jpeg;base64,{{IMG:photo}}" alt="Ramazan Bora Keçeci">
+        <span class="loc">
+          <svg width="10" height="13" viewBox="0 0 12 16"><path fill="#191B1E" d="M6 0C2.7 0 0 2.7 0 6c0 4.5 6 10 6 10s6-5.5 6-10c0-3.3-2.7-6-6-6zm0 8.4A2.4 2.4 0 1 1 6 3.6a2.4 2.4 0 0 1 0 4.8z"/></svg>
+          Turkey/Ankara
+        </span>
+      </div>
+      <div>
+        <h1>Ramazan Bora Keçeci</h1>
+        <div class="subtitle">Software Developer &middot; Mobile &amp; Backend</div>
+        <div class="contacts">
+          <div class="c-item">
+            <span class="cicon"><svg viewBox="0 0 16 16"><path d="M3.7 1.1 5.6 1c.4 0 .8.2 1 .6l1.2 2.3c.2.4.1.8-.2 1.1L6.4 6.2c.7 1.5 1.9 2.7 3.4 3.4l1.2-1.2c.3-.3.7-.4 1.1-.2l2.3 1.2c.4.2.6.6.6 1l-.1 1.9c0 .6-.5 1-1.1 1C7.4 14.6 1.4 8.6 1.1 2.2c0-.6.4-1.1 1-1.1z"/></svg></span>
+            <a class="plain" href="tel:+905546708528">+90 554 670 85 28</a>
+          </div>
+          <div class="c-item">
+            <span class="cicon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-9.6 12.3H7.9V9.7h2.5v6.6zM9.1 8.6a1.4 1.4 0 1 1 0-2.9 1.4 1.4 0 0 1 0 2.9zm7.5 7.7h-2.5v-3.4c0-.9-.3-1.5-1.1-1.5-.6 0-1 .4-1.1.8-.1.1-.1.4-.1.6v3.5h-2.5V9.7h2.5v1c.3-.5.9-1.2 2.2-1.2 1.6 0 2.6 1 2.6 3.2v3.6z"/></svg></span>
+            <span><a href="https://linkedin.com/in/borakececi">linkedin.com/in/borakececi</a></span>
+          </div>
+          <div class="c-item">
+            <span class="cicon"><svg viewBox="0 0 24 24"><path d="M20.4 3H3.6C2.7 3 2 3.7 2 4.6v.9l10 5.4 10-5.4v-.9c0-.9-.7-1.6-1.6-1.6zM2 7.8v11.6c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V7.8l-10 5.4L2 7.8z"/></svg></span>
+            <a class="plain" href="mailto:rbkececi@gmail.com">rbkececi@gmail.com</a>
+          </div>
+          <div class="c-item">
+            <span class="cicon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9h-3.4a15.7 15.7 0 0 0-1.2-5.5A8 8 0 0 1 19.9 11zM12 4c.9 1.2 1.9 3.5 2.1 7H9.9c.2-3.5 1.2-5.8 2.1-7zM4.1 13h3.4c.1 2 .5 3.9 1.2 5.5A8 8 0 0 1 4.1 13zm3.4-2H4.1a8 8 0 0 1 4.6-5.5A15.7 15.7 0 0 0 7.5 11zM12 20c-.9-1.2-1.9-3.5-2.1-7h4.2c-.2 3.5-1.2 5.8-2.1 7zm3.3-1.5c.7-1.6 1.1-3.5 1.2-5.5h3.4a8 8 0 0 1-4.6 5.5z"/></svg></span>
+            <span><a href="https://rbkececi.com">rbkececi.com</a></span>
+          </div>
+          <div class="c-item">
+            <span class="cicon"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.3 1.1 2.9.9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5.1 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 4-2.4 4.8-4.6 5.1.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></span>
+            <span><a href="https://github.com/kececibora">github.com/kececibora</a></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cols">
+      <aside class="left">
+        <section>
+          <h2>Education</h2>
+          <div class="edu"><b>Gaziantep University</b><span>Occupational Health And Safety</span><span>Master&rsquo;s Degree</span><span>2021-2022</span></div>
+          <div class="edu"><b>Anadolu University</b><span>Civil Engineering</span><span>Bachelor&rsquo;s Degree, (100% English)</span><span>2013-2019</span></div>
+          <div class="edu"><b>Halmstad University</b><span>Civil Engineering</span><span>Erasmus Mobility Programme</span><span>2018-2019</span></div>
+          <div class="edu"><b>Anadolu University</b><span>Computer Programming</span><span>Present</span></div>
+        </section>
+        <section>
+          <h2>Courses</h2>
+          <ul class="plist">
+            <li>Flutter Mobile Development <span class="prov">&ndash; Udemy</span></li>
+            <li>Frontend Web Development <span class="prov">&ndash; Patika.dev</span></li>
+            <li>Node.js Backend Development <span class="prov">&ndash; Patika.dev</span></li>
+            <li>JavaScript Algorithms and Data Structures <span class="prov">&ndash; freeCodeCamp</span></li>
+            <li>Primavera Project Management Certificate <span class="prov">&ndash; Akım Mühendislik</span></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Skills</h2>
+          <ul class="plist">
+            <li>Flutter</li>
+            <li>React.js</li>
+            <li>Automation &amp; Multi-Agent Workflows</li>
+            <li>Firebase</li>
+            <li>REST API Integration</li>
+            <li>Logo Tiger ERP Integration</li>
+            <li>Node.js</li>
+            <li>Bluetooth / Embedded Systems (ESP32, Arduino)</li>
+            <li>State Management (Provider, Riverpod, GetX)</li>
+            <li>PDF Generation</li>
+            <li>Data Modeling</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main class="right">
+        <section class="summary">
+          <h2>Summary</h2>
+          <p class="just">Software Developer specializing in Flutter, with hands-on experience in building enterprise-level applications including ERP, stock management, and system calculation tools. At BKS Holding, developed scalable mobile and backend systems, integrating with Logo Tiger ERP and optimizing business operations. Experienced in Flutter, Node.js, and embedded systems (Arduino, ESP32), with a focus on real-world problem solving and performance optimization.</p>
+        </section>
+
+        <section>
+          <h2>Experience</h2>
+
+          <div class="xp">
+            <div class="xp-head"><h3>Software Developer</h3><span class="xp-date">2024 - Present</span></div>
+            <div class="xp-co">Independent / Project-based</div>
+            <p class="dash just">Developed Flutter-based applications for municipal services, including water usage billing systems, payment integrations, and data visualization dashboards</p>
+            <p class="dash just">Built payment collection features for field staff: QR code scanning, offline support, and Bluetooth receipt printing (using my own fork of the printer driver)</p>
+            <p class="dash just">Volunteered to design, develop, and publish <b>Go Baduk Weiqi Timer</b>, a Go (Baduk) tournament clock, on <a href="https://play.google.com/store/apps/details?id=com.borakececi.gotimer">Google Play</a> and the <a href="https://apps.apple.com/app/go-baduk-weiqi-timer/id6790043280">App Store</a> for the Turkish Go Players Association</p>
+            <p class="dash just">Designed and developed <b>Siege Duel: Trap Strategy</b> (Kapan), a board game with a pure-Dart game engine, a 3-level AI, and ranked online multiplayer (matchmaking, Elo, leaderboards) on Firebase &mdash; on the <a href="https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211">App Store</a></p>
+            <div class="strip">
+              <div class="shot"><img src="data:image/jpeg;base64,{{IMG:municipal-crop}}" alt="Municipal apps"></div>
+              <div class="shot"><img src="data:image/jpeg;base64,{{IMG:gt-menu}}" alt="gotimer menu"></div>
+              <div class="shot"><img src="data:image/jpeg;base64,{{IMG:gt-timer}}" alt="gotimer clock"></div>
+              <div class="shot"><img src="data:image/webp;base64,{{IMG:kapan}}" alt="Kapan"></div>
+                          </div>
+          </div>
+
+          <div class="xp">
+            <div class="xp-head"><h3>Software Developer</h3><span class="xp-date">01.2023 - 06.2026</span></div>
+            <div class="xp-co">BKS Holding</div>
+            <p class="dash just">Developed full-cycle mobile applications for dealers and customers, covering order creation, product configuration, and purchasing processes</p>
+            <p class="dash just">Integrated with Logo Tiger ERP system for real-time purchasing and stock synchronization</p>
+            <p class="dash just">Designed dynamic calculation systems for custom product configurations</p>
+            <p class="dash just">Developed PDF/Excel outputs for quotes and orders, along with chart-based reporting and dashboard screens</p>
+            <div class="strip">
+              <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-panel}}" alt="BKS Panel"></div>
+              <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-flow}}" alt="BKS Flow"></div>
+              <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-smart}}" alt="BKS Smart"></div>
+            </div>
+          </div>
+
+          <div class="xp">
+            <div class="xp-head"><h3>Civil Engineer</h3><span class="xp-date">2019 - 2022</span></div>
+            <p class="just">As a civil engineer, I've gained expertise in managing projects, handling unexpected challenges, and building good relationships with people.</p>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </div>
+</div>

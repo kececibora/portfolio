@@ -1,17 +1,64 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { ArrowUpRight, Maximize2, X } from 'lucide-react'
+import { ChevronRight, Maximize2, X } from 'lucide-react'
 import { Section } from './Section'
 import { stagger, staggerItem } from './Reveal'
 import { useLang } from '../i18n/LanguageContext'
+import { ProjectDialog } from './ProjectDialog'
+
+// Fanned stack of the group's first three screenshots — pure transforms,
+// spreads slightly on hover.
+function CardFan({ items }) {
+  const [left, center, right] = items.slice(0, 3)
+  const frame =
+    'absolute rounded-[1.1rem] border border-line/80 shadow-card transition-transform duration-500 will-change-transform'
+  return (
+    <div className="relative h-52 overflow-hidden border-b border-line bg-ink-2 sm:h-56">
+      <div className="blueprint-grid absolute inset-0 opacity-70" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.06] to-accent-2/[0.06]" />
+
+      {left && (
+        <img
+          src={left.image}
+          alt=""
+          loading="lazy"
+          className={`${frame} left-[7%] top-10 w-[32%] max-w-[180px] -rotate-6 group-hover:-translate-x-1 group-hover:-rotate-[9deg]`}
+        />
+      )}
+      {right && (
+        <img
+          src={right.image}
+          alt=""
+          loading="lazy"
+          className={`${frame} right-[7%] top-10 w-[32%] max-w-[180px] rotate-6 group-hover:translate-x-1 group-hover:rotate-[9deg]`}
+        />
+      )}
+      {center && (
+        <img
+          src={center.image}
+          alt=""
+          loading="lazy"
+          className={`${frame} left-1/2 top-5 z-10 w-[36%] max-w-[200px] -translate-x-1/2 group-hover:-translate-y-1.5`}
+        />
+      )}
+
+      <div className="absolute inset-x-0 bottom-0 z-20 h-16 bg-gradient-to-t from-ink-2 via-ink-2/70 to-transparent" />
+    </div>
+  )
+}
 
 export function Projects() {
   const { t } = useLang()
   const p = t.projects
   const reduce = useReducedMotion()
+  const [openGroup, setOpenGroup] = useState(null) // resolved group | null
   const [lightbox, setLightbox] = useState(null) // { src, alt } | null
 
-  // close on Escape + lock background scroll while open
+  const byCode = Object.fromEntries(p.items.map((it) => [it.code, it]))
+  const groups = p.groups.map((g) => ({ ...g, items: g.codes.map((c) => byCode[c]).filter(Boolean) }))
+  const esp32 = byCode['hardware/esp32-lab']
+
+  // lightbox: close on Escape + lock background scroll while open
   useEffect(() => {
     if (!lightbox) return
     const onKey = (e) => e.key === 'Escape' && setLightbox(null)
@@ -25,7 +72,8 @@ export function Projects() {
   }, [lightbox])
 
   return (
-    <Section id="projects" index={3} eyebrow={p.eyebrow} title={p.title}>
+    <Section id="projects" index={3} eyebrow={p.eyebrow} title={p.title} note={p.note}>
+      {/* the two families */}
       <motion.div
         variants={stagger}
         initial={reduce ? 'show' : 'hidden'}
@@ -33,94 +81,95 @@ export function Projects() {
         viewport={{ once: true, margin: '0px 0px -8% 0px' }}
         className="grid gap-5 md:grid-cols-2"
       >
-        {p.items.map((proj, i) => (
-          <motion.article
-            key={proj.name}
+        {groups.map((g) => (
+          <motion.button
+            key={g.key}
+            type="button"
             variants={staggerItem}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-panel/50 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-glow"
+            onClick={() => setOpenGroup(g)}
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-panel/50 text-left backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-glow"
           >
-            {/* media: real screenshot (device peek), wide diagram, or blueprint placeholder */}
-            <div className="relative h-44 overflow-hidden border-b border-line bg-ink-2">
-              <div className="blueprint-grid absolute inset-0 opacity-70" />
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.06] to-accent-2/[0.06]" />
+            <CardFan items={g.items} />
 
-              {proj.image && proj.wide ? (
-                <img
-                  src={proj.image}
-                  alt={proj.name}
-                  loading="lazy"
-                  className="absolute inset-0 m-auto max-h-[78%] w-[92%] object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              ) : proj.image ? (
-                <img
-                  src={proj.image}
-                  alt={proj.name}
-                  loading="lazy"
-                  className="absolute left-1/2 top-7 w-[44%] max-w-[224px] -translate-x-1/2 rounded-[1.4rem] border border-line/80 shadow-card transition-transform duration-500 group-hover:-translate-y-1.5"
-                />
-              ) : (
-                <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-accent/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:animate-scan" />
-              )}
-
-              <span className="absolute left-4 top-4 z-10 font-mono text-[11px] tracking-[0.2em] text-faint">
-                FIG.{String(i + 1).padStart(2, '0')}
-              </span>
-              {proj.image && !proj.wide && (
-                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-ink-2 via-ink-2/70 to-transparent" />
-              )}
-              <span className="absolute bottom-4 left-4 z-10 font-mono text-sm text-accent/80">
-                ~/{proj.code}
-              </span>
-
-              {/* click-to-enlarge overlay */}
-              {proj.image && (
-                <button
-                  type="button"
-                  onClick={() => setLightbox({ src: proj.image, alt: proj.name })}
-                  aria-label={`${proj.name} — ${p.enlarge}`}
-                  className="absolute inset-0 z-20 flex items-start justify-end p-3 outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                >
-                  <span className="flex items-center gap-1 rounded-lg border border-line/70 bg-ink/70 px-2 py-1 font-mono text-[10px] tracking-wide text-muted opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
-                    <Maximize2 size={12} />
-                    {p.enlarge}
-                  </span>
-                </button>
-              )}
-            </div>
-
-            {/* body */}
             <div className="flex flex-1 flex-col p-5">
-              <h3 className="font-display text-lg font-semibold text-text">{proj.name}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{proj.desc}</p>
+              <div className="flex items-baseline justify-between gap-3">
+                <h3 className="font-display text-lg font-semibold text-text">{g.title}</h3>
+                <span className="flex-none rounded-md border border-line/70 bg-ink/60 px-2 py-0.5 font-mono text-[11px] text-muted">
+                  {g.items.length} {p.appsSuffix}
+                </span>
+              </div>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{g.blurb}</p>
 
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {proj.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-md border border-line/70 bg-ink/60 px-2 py-0.5 font-mono text-[11px] text-muted"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-
-              {proj.url && (
-                <a
-                  href={proj.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-text"
-                >
-                  {p.detail}
-                  <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              )}
+              <span className="btn-3d mt-5 w-fit px-4 py-2.5 text-sm">
+                {p.cta}
+                <ChevronRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+              </span>
             </div>
-          </motion.article>
+          </motion.button>
         ))}
       </motion.div>
 
-      {/* lightbox dialog */}
+      {/* hardware sheet — stays a wide standalone card */}
+      {esp32 && (
+        <motion.article
+          variants={staggerItem}
+          initial={reduce ? 'show' : 'hidden'}
+          whileInView="show"
+          viewport={{ once: true, margin: '0px 0px -8% 0px' }}
+          className="group relative mt-5 overflow-hidden rounded-2xl border border-line bg-panel/50 backdrop-blur-sm transition-all duration-300 hover:border-accent/40 hover:shadow-glow"
+        >
+          <div className="relative h-40 overflow-hidden border-b border-line bg-ink-2 sm:h-44">
+            <div className="blueprint-grid absolute inset-0 opacity-70" />
+            <img
+              src={esp32.image}
+              alt={esp32.name}
+              loading="lazy"
+              className="absolute inset-0 m-auto max-h-[80%] w-[92%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+            <span className="absolute left-4 top-4 z-10 font-mono text-[11px] tracking-[0.2em] text-faint">
+              FIG. HW
+            </span>
+            <button
+              type="button"
+              onClick={() => setLightbox({ src: esp32.image, alt: esp32.name })}
+              aria-label={`${esp32.name} — ${p.enlarge}`}
+              className="absolute inset-0 z-20 flex items-start justify-end p-3 outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              <span className="flex items-center gap-1 rounded-lg border border-line/70 bg-ink/70 px-2 py-1 font-mono text-[10px] tracking-wide text-muted opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                <Maximize2 size={12} />
+                {p.enlarge}
+              </span>
+            </button>
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-3 p-5">
+            <div className="min-w-0">
+              <h3 className="font-display text-lg font-semibold text-text">{esp32.name}</h3>
+              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted">{esp32.desc}</p>
+            </div>
+            <ul className="flex flex-wrap gap-2">
+              {esp32.tags.map((tag) => (
+                <li key={tag} className="rounded-md border border-line/70 bg-ink/60 px-2 py-0.5 font-mono text-[11px] text-muted">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.article>
+      )}
+
+      {/* group browser dialog */}
+      <AnimatePresence>
+        {openGroup && (
+          <ProjectDialog
+            group={openGroup}
+            labels={p.dialog}
+            soon={p.soon}
+            onClose={() => setOpenGroup(null)}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* lightbox for the hardware sheet */}
       <AnimatePresence>
         {lightbox && (
           <motion.div

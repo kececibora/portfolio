@@ -91,6 +91,62 @@
     @apply border-accent/50 outline-none;
     box-shadow: 0 0 0 3px rgba(63, 224, 255, 0.12);
   }
+
+  /* 2.5D "keycap" buttons — raised edge + neon glow, pressed state sinks.
+     Transform/box-shadow only, so they stay cheap on low-end phones. */
+  .btn-3d {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-ink;
+    background: linear-gradient(180deg, #6ae8ff 0%, #35cdea 100%);
+    box-shadow:
+      0 4px 0 0 #12809c,
+      0 10px 24px -8px rgba(63, 224, 255, 0.5);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    will-change: transform;
+  }
+  .btn-3d:hover {
+    filter: brightness(1.07);
+  }
+  .btn-3d:active {
+    transform: translateY(3px);
+    box-shadow:
+      0 1px 0 0 #12809c,
+      0 5px 14px -8px rgba(63, 224, 255, 0.4);
+  }
+
+  .btn-3d-violet {
+    background: linear-gradient(180deg, #a893ff 0%, #8a6bff 100%);
+    box-shadow:
+      0 4px 0 0 #5a41c4,
+      0 10px 24px -8px rgba(138, 107, 255, 0.5);
+  }
+  .btn-3d-violet:active {
+    box-shadow:
+      0 1px 0 0 #5a41c4,
+      0 5px 14px -8px rgba(138, 107, 255, 0.4);
+  }
+
+  /* dark keycap — for nav arrows / close buttons on panels */
+  .btn-3d-dark {
+    @apply text-text;
+    background: linear-gradient(180deg, #1d2430 0%, #12151c 100%);
+    border: 1px solid theme('colors.line');
+    box-shadow:
+      0 4px 0 0 #05060a,
+      0 10px 20px -10px rgba(0, 0, 0, 0.8);
+  }
+  .btn-3d-dark:hover {
+    filter: none;
+    border-color: rgba(63, 224, 255, 0.4);
+    box-shadow:
+      0 4px 0 0 #05060a,
+      0 10px 24px -8px rgba(63, 224, 255, 0.25);
+  }
+  .btn-3d-dark:active {
+    transform: translateY(3px);
+    box-shadow:
+      0 1px 0 0 #05060a,
+      0 5px 12px -10px rgba(0, 0, 0, 0.7);
+  }
 }
 
 @layer utilities {
