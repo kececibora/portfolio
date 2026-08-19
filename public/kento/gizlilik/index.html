@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kento — Gizlilik Politikası</title>
+<link rel="icon" href="/favicon.svg">
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; background:#0d1117; color:#d8dee6;
+        font:16px/1.65 -apple-system, 'Segoe UI', Roboto, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:48px 20px 80px; }
+  h1 { font-size:1.7rem; line-height:1.3; }
+  h2 { font-size:1.25rem; margin-top:2.2em; border-bottom:1px solid #2a3038; padding-bottom:6px; }
+  h3 { font-size:1.05rem; margin-top:1.8em; }
+  a { color:#7fb4e6; }
+  code { background:#1a2027; padding:1px 6px; border-radius:5px; font-size:.9em; }
+  hr { border:0; border-top:1px solid #2a3038; margin:2em 0; }
+  table { border-collapse:collapse; width:100%; margin:1em 0; font-size:.92em; }
+  th, td { border:1px solid #2a3038; padding:7px 10px; text-align:left; vertical-align:top; }
+  th { background:#161b22; }
+  .langlink { font-size:.85em; opacity:.8; }
+</style>
+</head>
+<body>
+<main>
+<p class="langlink"><a href="/kento/privacy/">English version</a></p>
+<h1>Gizlilik Politikası — Kento</h1>
+<p><strong>Son güncelleme:</strong> 18 Ağustos 2026 <strong>Uygulama:</strong> Kento (<code>com.borakececi.offlinebadukai</code>) <strong>Veri sorumlusu:</strong> Lysa Software Media — Bora Keçeci <strong>İletişim:</strong> boraizzet0@gmail.com</p>
+<hr>
+<h2>Kısaca</h2>
+<p>Bu uygulama çevrimdışı çalışır. Maçlarınız, analizleriniz ve fotoğraflarınız <strong>cihazınızda kalır</strong>. Yapay zekâ analizi telefonunuzun kendi işlemcisinde koşar; hiçbir maç bir sunucuya gönderilmez.</p>
+<p>Tek istisna, sizin açıkça başlattığınız <strong>Bulut</strong> özelliğidir: giriş yapıp bir maçı buluta yüklerseniz o maç bizim Firebase hesabımızda saklanır. Bu tamamen isteğe bağlıdır ve uygulamanın geri kalanı kullanılmadan da çalışır.</p>
+<hr>
+<h2>1. Hangi verileri işliyoruz</h2>
+<h3>1.1 Cihazınızda kalan, bize hiç ulaşmayan veriler</h3>
+<table>
+<tr><th>veri</th><th>neden</th><th>nerede</th></tr>
+<tr><td>Maç kayıtları (SGF)</td><td>Uygulamanın temel işlevi</td><td>Cihazın uygulama klasörü</td></tr>
+<tr><td>Analiz sonuçları</td><td>Tekrar hesaplamamak için</td><td>Cihazın uygulama klasörü</td></tr>
+<tr><td>Ayarlar (dil, ses, gösterim)</td><td>Tercihlerinizi hatırlamak</td><td>Cihaz tercihleri</td></tr>
+<tr><td>Günlük analiz sayacı</td><td>Ücretsiz hakkı takip etmek</td><td>Cihazın uygulama klasörü</td></tr>
+<tr><td>Tahta fotoğrafları</td><td>Pozisyonu okumak</td><td><strong>Hiç saklanmıyor</strong> — okunur, pozisyon çıkarılır, fotoğraf atılır</td></tr>
+</table>
+<p>Bu verilerin hiçbiri cihazınızdan çıkmaz. Uygulamayı silerseniz hepsi silinir.</p>
+<h3>1.2 Bulut özelliğini kullanırsanız</h3>
+<p>Bulut yedeği <strong>isteğe bağlıdır</strong> ve yalnızca siz giriş yaptığınızda devreye girer.</p>
+<table>
+<tr><th>veri</th><th>neden</th><th>saklandığı yer</th></tr>
+<tr><td>E-posta adresiniz</td><td>Hesabınızı tanımak</td><td>Firebase Authentication (Google LLC)</td></tr>
+<tr><td>Adınız ve profil bilginiz</td><td>Girişi göstermek</td><td>Firebase Authentication</td></tr>
+<tr><td>Yüklediğiniz maçlar (en fazla 3)</td><td>Başka cihazda açmak</td><td>Cloud Firestore, Avrupa (eur3)</td></tr>
+<tr><td>Yükleme zamanı</td><td>Listelemek</td><td>Cloud Firestore</td></tr>
+</table>
+<p>Bu verilere <strong>yalnızca siz</strong> erişebilirsiniz. Sunucu kuralları, her kullanıcının kendi kayıtları dışındaki hiçbir kayda erişmesini engeller.</p>
+<h3>1.3 Satın alma</h3>
+<p>Uygulama içi satın alma App Store ve Google Play üzerinden yürür. Ödeme bilgilerinizi <strong>görmüyoruz ve saklamıyoruz</strong>; mağaza yalnızca satın almanın geçerli olup olmadığını bildirir.</p>
+<hr>
+<h2>2. Toplamadığımız veriler</h2>
+<ul><li>Reklam kimliği, reklam ağı, izleme pikseli <strong>yok</strong></li><li>Analitik, kullanım istatistiği, çökme raporlama <strong>yok</strong></li><li>Konum, rehber, takvim, mikrofon erişimi <strong>yok</strong></li><li>Üçüncü taraflara veri satışı ya da paylaşımı <strong>yok</strong></li></ul>
+<hr>
+<h2>3. İzinler</h2>
+<table>
+<tr><th>izin</th><th>ne zaman isteniyor</th><th>ne için</th></tr>
+<tr><td>Kamera</td><td>&quot;Fotoğraftan pozisyon&quot; ile fotoğraf çekerken</td><td>Tahtanın fotoğrafını çekmek</td></tr>
+<tr><td>Fotoğraf galerisi</td><td>Galeriden seçerken</td><td>Var olan bir fotoğrafı okumak</td></tr>
+</table>
+<p>İkisi de yalnızca o an, o iş için kullanılır. Fotoğraf uygulamadan çıkmaz ve cihazda saklanmaz — okunur, taşların yeri çıkarılır, görüntü atılır.</p>
+<hr>
+<h2>4. Verileriniz ne kadar saklanıyor</h2>
+<p>Cihazınızdaki veriler siz silene ya da uygulamayı kaldırana kadar kalır.</p>
+<p>Buluttaki veriler siz silene kadar kalır. <strong>Hesabınızı ve buluttaki tüm maçlarınızı uygulama içinden silebilirsiniz:</strong> Kitaplık → Bulut → &quot;Hesabımı sil&quot;. Silme kalıcıdır ve geri alınamaz.</p>
+<hr>
+<h2>5. Haklarınız (KVKK ve GDPR)</h2>
+<p>Şunları talep edebilirsiniz: verilerinize erişim, düzeltme, silme, işlemeye itiraz ve taşınabilirlik.</p>
+<p>Bulut verileriniz için silme ve erişim uygulama içinden anında yapılabilir. Diğer talepler için boraizzet0@gmail.com adresine yazabilirsiniz; en geç 30 gün içinde dönüş yapılır.</p>
+<hr>
+<h2>6. Çocuklar</h2>
+<p>Uygulama 13 yaş altındaki çocuklara yönelik değildir ve bilerek onlardan veri toplamaz.</p>
+<hr>
+<h2>7. Kullandığımız hizmetler</h2>
+<ul><li><strong>Google Firebase</strong> (Authentication, Cloud Firestore) — yalnızca bulut özelliği için. Veriler Avrupa bölgesinde tutulur. <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li><li><strong>Apple App Store / Google Play</strong> — satın alma doğrulaması.</li></ul>
+<hr>
+<h2>8. Değişiklikler</h2>
+<p>Bu politika değişirse güncel sürüm bu adreste yayımlanır ve &quot;son güncelleme&quot; tarihi değişir. Önemli bir değişiklikte uygulama içinde bilgilendirme yapılır.</p>
+</main>
+</body>
+</html>
