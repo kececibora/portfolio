@@ -156,7 +156,7 @@ export const content = {
           key: 'indie',
           title: 'Bağımsız Uygulamalar',
           blurb: 'Go turnuva saatinden strateji oyununa ve belediye servislerine — kendi başıma tasarlayıp yayınladığım, reklamsız uygulamalar.',
-          codes: ['app/go-timer', 'game/kapan', 'gov/municipal-suite', 'app/chess-trainer'],
+          codes: ['app/kento', 'app/go-timer', 'game/kapan', 'gov/municipal-suite', 'app/chess-trainer'],
         },
       ],
       items: [
@@ -214,6 +214,20 @@ export const content = {
           ],
           code: 'gov/municipal-suite',
           image: '/projects/municipal.webp',
+        },
+        {
+          name: 'Kento — Go & Baduk AI Analizi',
+          desc: 'Gerçek tahtanın fotoğrafını çekip saniyeler içinde dijital maça çeviren, tamamen çevrimdışı KataGo motoruyla maçı hamle hamle inceleyen kayıt ve analiz uygulamam. 11 dil, tek seferlik satın alma, reklamsız.',
+          features: [
+            'Fotoğraftan pozisyon okuma: kamerayı tut, taşlar dijital tahtaya geçsin',
+            'Puan bazlı hata analizi, skor grafiği, bölge haritası ve aday hamleler',
+            'Varyant dallanma ve otomatik derin analizle profesyonel çalışma akışı',
+            'Cihaz üstü KataGo — sunucusuz, hesapsız, tamamen çevrimdışı',
+          ],
+          tags: ['Flutter', 'KataGo', 'C++', 'Bilgisayarla Görü'],
+          code: 'app/kento',
+          status: 'Yakında App Store ve Google Play’de',
+          image: '/projects/kento.webp',
         },
         {
           name: 'Go / Baduk Tournament Timer',
@@ -484,7 +498,7 @@ export const content = {
           key: 'indie',
           title: 'Independent Apps',
           blurb: 'From a Go tournament clock to a strategy game and municipal services — ad-free apps I design and ship on my own.',
-          codes: ['app/go-timer', 'game/kapan', 'gov/municipal-suite', 'app/chess-trainer'],
+          codes: ['app/kento', 'app/go-timer', 'game/kapan', 'gov/municipal-suite', 'app/chess-trainer'],
         },
       ],
       items: [
@@ -542,6 +556,20 @@ export const content = {
           ],
           code: 'gov/municipal-suite',
           image: '/projects/municipal.webp',
+        },
+        {
+          name: 'Kento — Go & Baduk AI Analysis',
+          desc: 'My game recorder and analysis app that photographs a real board into a digital game in seconds and reviews it move by move with a fully offline KataGo engine. 11 languages, one-time purchase, ad-free.',
+          features: [
+            'Photo-to-position: point the camera, stones land on a digital board',
+            'Point-based mistake analysis, score graph, territory map, candidate moves',
+            'Variation branching with automatic deep analysis for serious study',
+            'On-device KataGo — no servers, no accounts, fully offline',
+          ],
+          tags: ['Flutter', 'KataGo', 'C++', 'Computer Vision'],
+          code: 'app/kento',
+          status: 'Coming soon to the App Store and Google Play',
+          image: '/projects/kento.webp',
         },
         {
           name: 'Go / Baduk Tournament Timer',
