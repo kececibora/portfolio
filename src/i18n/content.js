@@ -62,11 +62,11 @@ export const content = {
       categories: [
         {
           name: 'Mobile Development',
-          items: ['Flutter', 'Dart', 'State Management', 'Provider', 'Riverpod', 'GetX', 'Responsive UI', 'PDF Generation'],
+          items: ['Flutter', 'Dart', 'State Management', 'Provider', 'Riverpod', 'Responsive UI', 'PDF Generation'],
         },
         {
           name: 'Backend & API',
-          items: ['Node.js', 'Express', 'REST API', 'MongoDB', 'PHP & MySQL', 'Serverless akışlar'],
+          items: ['Node.js', 'Express', 'REST API', 'Firebase', 'Serverless akışlar'],
         },
         {
           name: 'Firebase & Cloud',
@@ -82,11 +82,11 @@ export const content = {
         },
         {
           name: 'AI & Automation',
-          items: ['Otomasyon Akışları', 'AI Destekli Kod Akışı', 'Süreç Otomasyonu'],
+          items: ['Otomasyon Akışları', 'AI Destekli Kod Akışı', 'Süreç Otomasyonu', 'Mobil Cihaz + Flutter Köprüsü'],
         },
         {
           name: 'Other',
-          items: ['React.js', 'Data Modeling', 'Dashboard & Veri Görselleştirme', 'Proje Yönetimi', 'İnşaat Mühendisliği'],
+          items: ['React.js', 'Data Modeling', 'Dashboard & Veri Görselleştirme', 'Proje Yönetimi', 'İnşaat Mühendisliği', 'İş Sağlığı ve Güvenliği'],
         },
       ],
     },
@@ -151,12 +151,15 @@ export const content = {
           title: 'BKS Uygulama Ailesi',
           blurb: 'Bayi sipariş panelinden akıllı cam kontrolüne — Logo Tiger ERP’ye bağlı, sahada her gün kullanılan kurumsal uygulama ailesi.',
           codes: ['platform/bks-panel', 'app/bks-flow', 'app/bks-smart'],
+          imageNote: 'Telif nedeniyle temsili görsel kullanılmıştır.',
+          storeLabel: 'Tüm BKS uygulamaları',
+          storeUrl: 'https://play.google.com/store/apps/dev?id=8979242274205666665',
         },
         {
           key: 'indie',
           title: 'Bağımsız Uygulamalar',
           blurb: 'Go turnuva saatinden strateji oyununa ve belediye servislerine — kendi başıma tasarlayıp yayınladığım, reklamsız uygulamalar.',
-          codes: ['app/kento', 'app/go-timer', 'game/kapan', 'gov/municipal-suite', 'app/chess-trainer'],
+          codes: ['app/kento', 'app/go-timer', 'game/kapan', 'gov/municipal-suite'],
         },
       ],
       items: [
@@ -172,7 +175,7 @@ export const content = {
           ],
           code: 'platform/bks-panel',
           image: '/projects/bks-panel-blueprint.svg',
-          url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksbayiapp',
+          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksbayiapp' }],
         },
         {
           name: 'BKS Flow',
@@ -186,7 +189,7 @@ export const content = {
           ],
           code: 'app/bks-flow',
           image: '/projects/bks-flow-blueprint.svg',
-          url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksflow',
+          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksflow' }],
         },
         {
           name: 'BKS Smart',
@@ -200,7 +203,7 @@ export const content = {
           ],
           code: 'app/bks-smart',
           image: '/projects/bks-smart-blueprint.svg',
-          url: 'https://play.google.com/store/apps/details?id=com.bkscam.bks',
+          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.bkscam.bks' }],
         },
         {
           name: 'Municipal Service Applications',
@@ -241,7 +244,10 @@ export const content = {
           tags: ['Flutter', 'Android', 'Google Play'],
           code: 'app/go-timer',
           image: '/projects/go-timer.webp',
-          url: 'https://play.google.com/store/apps/details?id=com.borakececi.gotimer',
+          links: [
+            { kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.gotimer' },
+            { kind: 'apple', url: 'https://apps.apple.com/app/go-baduk-weiqi-timer/id6790043280' },
+          ],
         },
         {
           name: 'Kapan — Siege Duel',
@@ -255,7 +261,7 @@ export const content = {
           tags: ['Flutter', 'Firebase', 'Cloud Functions', 'Multiplayer'],
           code: 'game/kapan',
           status: 'App Store’da yayında · Google Play’de kapalı test',
-          url: 'https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211',
+          links: [{ kind: 'apple', url: 'https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211' }],
           image: '/projects/kapan.webp',
         },
         {
@@ -265,20 +271,6 @@ export const content = {
           code: 'hardware/esp32-lab',
           image: '/projects/esp32-lab-blueprint.svg',
           wide: true,
-        },
-        {
-          name: 'Chess Trainer',
-          desc: 'Reklamsız ve çevrimdışı satranç antrenörü: ~20.000 Lichess bulmacası, körleme antrenmanı, açılışlar ve yapay zekâya karşı oyun — yeni güncellemeyle 15 dilde, Google Play’de yayında.',
-          features: [
-            '5 antrenman modülü: koordinat, körleme, taktik, açılış, yapay zekâya karşı oyun',
-            '~20.000 puanlı Lichess bulmacası — tamamı cihazda, internetsiz',
-            'Günlük seri, günlük hedef ve mod bazında kişisel rekorlar',
-            '15 dil · reklamsız · hesapsız · kendi tahta widget’ı',
-          ],
-          tags: ['Flutter', 'Dart', 'Çevrimdışı', 'Lichess Puzzles'],
-          code: 'app/chess-trainer',
-          image: '/projects/chess.webp',
-          url: 'https://play.google.com/store/apps/details?id=com.borakececi.chess_trainer',
         },
       ],
     },
@@ -404,11 +396,11 @@ export const content = {
       categories: [
         {
           name: 'Mobile Development',
-          items: ['Flutter', 'Dart', 'State Management', 'Provider', 'Riverpod', 'GetX', 'Responsive UI', 'PDF Generation'],
+          items: ['Flutter', 'Dart', 'State Management', 'Provider', 'Riverpod', 'Responsive UI', 'PDF Generation'],
         },
         {
           name: 'Backend & API',
-          items: ['Node.js', 'Express', 'REST API', 'MongoDB', 'PHP & MySQL', 'Serverless workflows'],
+          items: ['Node.js', 'Express', 'REST API', 'Firebase', 'Serverless workflows'],
         },
         {
           name: 'Firebase & Cloud',
@@ -424,11 +416,11 @@ export const content = {
         },
         {
           name: 'AI & Automation',
-          items: ['Automation Workflows', 'AI-assisted Coding', 'Process Automation'],
+          items: ['Automation Workflows', 'AI-assisted Coding', 'Process Automation', 'Mobile Device + Flutter Bridge'],
         },
         {
           name: 'Other',
-          items: ['React.js', 'Data Modeling', 'Dashboards & Data Viz', 'Project Management', 'Civil Engineering'],
+          items: ['React.js', 'Data Modeling', 'Dashboards & Data Viz', 'Project Management', 'Civil Engineering', 'Occupational Health & Safety'],
         },
       ],
     },
@@ -493,12 +485,15 @@ export const content = {
           title: 'BKS App Family',
           blurb: 'From the dealer ordering panel to smart glass control — a family of enterprise apps tied to Logo Tiger ERP, used in the field every day.',
           codes: ['platform/bks-panel', 'app/bks-flow', 'app/bks-smart'],
+          imageNote: 'Representative visuals used for copyright reasons.',
+          storeLabel: 'All BKS apps',
+          storeUrl: 'https://play.google.com/store/apps/dev?id=8979242274205666665',
         },
         {
           key: 'indie',
           title: 'Independent Apps',
           blurb: 'From a Go tournament clock to a strategy game and municipal services — ad-free apps I design and ship on my own.',
-          codes: ['app/kento', 'app/go-timer', 'game/kapan', 'gov/municipal-suite', 'app/chess-trainer'],
+          codes: ['app/kento', 'app/go-timer', 'game/kapan', 'gov/municipal-suite'],
         },
       ],
       items: [
@@ -514,7 +509,7 @@ export const content = {
           ],
           code: 'platform/bks-panel',
           image: '/projects/bks-panel-blueprint.svg',
-          url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksbayiapp',
+          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksbayiapp' }],
         },
         {
           name: 'BKS Flow',
@@ -528,7 +523,7 @@ export const content = {
           ],
           code: 'app/bks-flow',
           image: '/projects/bks-flow-blueprint.svg',
-          url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksflow',
+          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.bkscam.bksflow' }],
         },
         {
           name: 'BKS Smart',
@@ -542,7 +537,7 @@ export const content = {
           ],
           code: 'app/bks-smart',
           image: '/projects/bks-smart-blueprint.svg',
-          url: 'https://play.google.com/store/apps/details?id=com.bkscam.bks',
+          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.bkscam.bks' }],
         },
         {
           name: 'Municipal Service Applications',
@@ -583,7 +578,10 @@ export const content = {
           tags: ['Flutter', 'Android', 'Google Play'],
           code: 'app/go-timer',
           image: '/projects/go-timer.webp',
-          url: 'https://play.google.com/store/apps/details?id=com.borakececi.gotimer',
+          links: [
+            { kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.gotimer' },
+            { kind: 'apple', url: 'https://apps.apple.com/app/go-baduk-weiqi-timer/id6790043280' },
+          ],
         },
         {
           name: 'Kapan — Siege Duel',
@@ -597,7 +595,7 @@ export const content = {
           tags: ['Flutter', 'Firebase', 'Cloud Functions', 'Multiplayer'],
           code: 'game/kapan',
           status: 'Live on the App Store · Google Play closed testing',
-          url: 'https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211',
+          links: [{ kind: 'apple', url: 'https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211' }],
           image: '/projects/kapan.webp',
         },
         {
@@ -607,20 +605,6 @@ export const content = {
           code: 'hardware/esp32-lab',
           image: '/projects/esp32-lab-blueprint.svg',
           wide: true,
-        },
-        {
-          name: 'Chess Trainer',
-          desc: 'An ad-free, offline chess trainer: ~20,000 Lichess puzzles, blindfold training, openings, and play vs AI — now in 15 languages, live on Google Play.',
-          features: [
-            '5 training modules: coordinates, blindfold, tactics, openings, play vs AI',
-            '~20,000 rated Lichess puzzles — all on-device, no internet needed',
-            'Daily streak, daily goal, and per-mode personal bests',
-            '15 languages · ad-free · no accounts · custom-built board widget',
-          ],
-          tags: ['Flutter', 'Dart', 'Offline', 'Lichess Puzzles'],
-          code: 'app/chess-trainer',
-          image: '/projects/chess.webp',
-          url: 'https://play.google.com/store/apps/details?id=com.borakececi.chess_trainer',
         },
       ],
     },

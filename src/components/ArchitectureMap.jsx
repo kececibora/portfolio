@@ -22,7 +22,7 @@ const nodes = [
     key: 'automation',
     code: '03 / AUTOMATION',
     title: 'AI + Automation',
-    detail: 'Agents + Workflows',
+    detail: 'Agents + LLM + Engines',
     icon: Sparkles,
     position: 'bottom-[9%] left-[4%]',
   },

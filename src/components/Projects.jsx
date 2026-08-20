@@ -8,7 +8,7 @@ import { ProjectDialog } from './ProjectDialog'
 
 // Fanned stack of the group's first three screenshots — pure transforms,
 // spreads slightly on hover.
-function CardFan({ items }) {
+function CardFan({ items, note }) {
   const [left, center, right] = items.slice(0, 3)
   const frame =
     'absolute rounded-[1.1rem] border border-line/80 shadow-card transition-transform duration-500 will-change-transform'
@@ -43,6 +43,12 @@ function CardFan({ items }) {
       )}
 
       <div className="absolute inset-x-0 bottom-0 z-20 h-16 bg-gradient-to-t from-ink-2 via-ink-2/70 to-transparent" />
+
+      {note && (
+        <span className="absolute bottom-2 right-3 z-20 max-w-[85%] text-right font-mono text-[9px] leading-tight tracking-wide text-faint/80 sm:text-[10px]">
+          * {note}
+        </span>
+      )}
     </div>
   )
 }
@@ -104,7 +110,7 @@ export function Projects() {
             >
               <span className="sr-only">{p.cta}</span>
             </button>
-            <CardFan items={g.items} />
+            <CardFan items={g.items} note={g.imageNote} />
 
             <div className="flex flex-1 flex-col p-5">
               <div className="flex items-baseline justify-between gap-3">

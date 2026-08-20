@@ -85,6 +85,16 @@ export function ProjectDialog({ group, labels, onClose }) {
         {/* header */}
         <div className="flex items-center gap-3 border-b border-line bg-panel-2/80 px-4 py-3 sm:px-5">
           <span className="label">{group.title}</span>
+          {group.storeUrl && (
+            <a
+              href={group.storeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden whitespace-nowrap font-mono text-[11px] text-muted underline-offset-4 transition-colors hover:text-accent hover:underline sm:inline"
+            >
+              {group.storeLabel} ↗
+            </a>
+          )}
           <span className="ml-auto whitespace-nowrap font-mono text-xs text-faint">
             {index + 1} / {items.length}
           </span>
@@ -130,6 +140,11 @@ export function ProjectDialog({ group, labels, onClose }) {
                     item.wide ? 'max-h-[26vh] md:max-h-[30vh]' : 'max-h-[30vh] md:max-h-[44vh]'
                   }`}
                 />
+                {group.imageNote && (
+                  <span className="absolute bottom-2 right-3 z-10 max-w-[85%] text-right font-mono text-[9px] leading-tight tracking-wide text-faint/80 sm:text-[10px]">
+                    * {group.imageNote}
+                  </span>
+                )}
               </div>
 
               {/* text side */}
@@ -167,21 +182,22 @@ export function ProjectDialog({ group, labels, onClose }) {
                       {item.status}
                     </span>
                   )}
-                  {item.url && (
+                  {item.links?.map((link) => (
                     <a
-                      href={item.url}
+                      key={link.url}
+                      href={link.url}
                       target="_blank"
                       rel="noreferrer"
                       className="btn-3d px-4 py-2.5 text-sm"
                     >
-                      {item.url.includes('apps.apple.com')
+                      {link.kind === 'apple'
                         ? 'App Store'
-                        : item.url.includes('play.google.com')
+                        : link.kind === 'play'
                           ? 'Google Play'
                           : labels.open}
                       <ArrowUpRight size={15} />
                     </a>
-                  )}
+                  ))}
                 </div>
               </div>
             </motion.div>
