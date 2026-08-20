@@ -80,7 +80,7 @@ export function ProjectDialog({ group, labels, onClose }) {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={reduce ? undefined : { opacity: 0, scale: 0.97, y: 8 }}
         transition={{ duration: 0.22, ease }}
-        className="panel-card flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden shadow-card outline-none"
+        className="panel-card flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden bg-panel shadow-card outline-none"
       >
         {/* header */}
         <div className="flex items-center gap-3 border-b border-line bg-panel-2/80 px-4 py-3 sm:px-5">
@@ -148,7 +148,7 @@ export function ProjectDialog({ group, labels, onClose }) {
               </div>
 
               {/* text side */}
-              <div className="p-5 sm:p-6">
+              <div className="bg-panel p-5 sm:p-6">
                 <p className="font-mono text-xs text-accent/80">~/{item.code}</p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-text sm:text-2xl">{item.name}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{item.desc}</p>
