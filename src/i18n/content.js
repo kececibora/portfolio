@@ -260,7 +260,6 @@ export const content = {
           ],
           tags: ['Flutter', 'Firebase', 'Cloud Functions', 'Multiplayer'],
           code: 'game/kapan',
-          status: 'App Store ve Google Play’de yayında',
           links: [
             { kind: 'apple', url: 'https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211' },
             { kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.block_war' },
@@ -597,7 +596,6 @@ export const content = {
           ],
           tags: ['Flutter', 'Firebase', 'Cloud Functions', 'Multiplayer'],
           code: 'game/kapan',
-          status: 'Live on the App Store and Google Play',
           links: [
             { kind: 'apple', url: 'https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211' },
             { kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.block_war' },
