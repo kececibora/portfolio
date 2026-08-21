@@ -23,6 +23,15 @@ export function ProjectDialog({ group, labels, onClose }) {
   const paginate = (d) => setState(([i]) => [(i + d + items.length) % items.length, d])
   const goto = (i) => setState(([prev]) => [i, i > prev ? 1 : -1])
 
+  // First-open nudge: the card drifts left and settles back, so the panel reads as
+  // swipeable and you notice there are more projects behind this one.
+  const [nudge, setNudge] = useState(false)
+  useEffect(() => {
+    if (reduce || items.length < 2) return
+    const id = setTimeout(() => setNudge(true), 340)
+    return () => clearTimeout(id)
+  }, [reduce, items.length])
+
   // keyboard, scroll lock, focus in/out
   useEffect(() => {
     const onKey = (e) => {
@@ -108,8 +117,13 @@ export function ProjectDialog({ group, labels, onClose }) {
           </button>
         </div>
 
-        {/* slide area */}
-        <div className="relative flex-1 overflow-y-auto overflow-x-hidden">
+        {/* slide area — drifts left once on open so the panel reads as swipeable */}
+        <motion.div
+          className="relative flex-1 overflow-y-auto overflow-x-hidden"
+          initial={false}
+          animate={nudge ? { x: [0, -34, 0] } : { x: 0 }}
+          transition={nudge ? { duration: 0.78, times: [0, 0.42, 1], ease } : { duration: 0 }}
+        >
           <AnimatePresence initial={false} custom={dir} mode="wait">
             <motion.div
               key={item.code}
@@ -204,7 +218,7 @@ export function ProjectDialog({ group, labels, onClose }) {
               </div>
             </motion.div>
           </AnimatePresence>
-        </div>
+        </motion.div>
 
         {/* footer: prev / dots / next */}
         <div className="flex items-center justify-between border-t border-line bg-panel-2/60 px-4 py-3 sm:px-5">
