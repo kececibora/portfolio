@@ -194,7 +194,9 @@ export function ProjectDialog({ group, labels, onClose }) {
                         ? 'App Store'
                         : link.kind === 'play'
                           ? 'Google Play'
-                          : labels.open}
+                          : link.kind === 'site'
+                            ? labels.openSite
+                            : labels.open}
                       <ArrowUpRight size={15} />
                     </a>
                   ))}

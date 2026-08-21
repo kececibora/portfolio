@@ -94,7 +94,7 @@ export function Projects() {
         initial={reduce ? 'show' : 'hidden'}
         whileInView="show"
         viewport={{ once: true, margin: '0px 0px -8% 0px' }}
-        className="grid gap-5 md:grid-cols-2"
+        className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
       >
         {groups.map((g) => (
           <motion.article
@@ -116,7 +116,7 @@ export function Projects() {
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="font-display text-lg font-semibold text-text">{g.title}</h3>
                 <span className="flex-none rounded-md border border-line/70 bg-ink/60 px-2 py-0.5 font-mono text-[11px] text-muted">
-                  {g.items.length} {p.appsSuffix}
+                  {g.items.length} {g.itemsSuffix || p.appsSuffix}
                 </span>
               </div>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{g.blurb}</p>
