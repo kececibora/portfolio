@@ -27,7 +27,7 @@
 <main>
 <p class="langlink"><a href="/kento/privacy/">English version</a></p>
 <h1>Gizlilik Politikası — Kento</h1>
-<p><strong>Son güncelleme:</strong> 18 Ağustos 2026 <strong>Uygulama:</strong> Kento (<code>com.borakececi.offlinebadukai</code>) <strong>Veri sorumlusu:</strong> Lysa Software Media — Bora Keçeci <strong>İletişim:</strong> rbkececi@gmail.com</p>
+<p><strong>Son güncelleme:</strong> 28 Ağustos 2026 <strong>Uygulama:</strong> Kento (<code>com.borakececi.offlinebadukai</code>) <strong>Veri sorumlusu:</strong> Lysa Software Media — Bora Keçeci <strong>İletişim:</strong> rbkececi@gmail.com</p>
 <hr>
 <h2>Kısaca</h2>
 <p>Bu uygulama çevrimdışı çalışır. Maçlarınız, analizleriniz ve fotoğraflarınız <strong>cihazınızda kalır</strong>. Yapay zekâ analizi telefonunuzun kendi işlemcisinde koşar; hiçbir maç bir sunucuya gönderilmez.</p>
@@ -54,11 +54,21 @@
 <tr><td>Yükleme zamanı</td><td>Listelemek</td><td>Cloud Firestore</td></tr>
 </table>
 <p>Bu verilere <strong>yalnızca siz</strong> erişebilirsiniz. Sunucu kuralları, her kullanıcının kendi kayıtları dışındaki hiçbir kayda erişmesini engeller.</p>
-<h3>1.3 Satın alma</h3>
+<h3>1.3 Hata raporları</h3>
+<p>Uygulamada bir şey ters giderse bundan haberdar olabiliyoruz — <strong>kararı siz veriyorsunuz</strong>. Anahtar <strong>Ayarlar → Gizlilik → &quot;Hata raporları gönder&quot;</strong> altında. Varsayılan olarak açık ve kapatmanız anında etkili.</p>
+<table>
+<tr><th>veri</th><th>neden</th><th>saklandığı yer</th></tr>
+<tr><td>Hatanın kendisi ve kodun neresinde olduğu</td><td>Kusuru düzeltmek</td><td>Firebase Crashlytics (Google LLC)</td></tr>
+<tr><td>Cihaz modeli, işletim sistemi ve uygulama sürümü</td><td>Aynı kusur çoğu zaman tek bir cihazı ya da tek bir sürümü etkiliyor</td><td>Firebase Crashlytics</td></tr>
+<tr><td>Crashlytics&#x27;in ürettiği bir kurulum kimliği</td><td>Aynı kusura kaç kişinin denk geldiğini saymak</td><td>Firebase Crashlytics</td></tr>
+</table>
+<p><strong>Hiçbir zaman gönderilmeyenler:</strong> maçlarınız, analizleriniz, fotoğraflarınız, adınız ve e-posta adresiniz. Bir hata mesajı dosya adı içerecek olursa — ve bu uygulamada dosya adı genelde bir maça verdiğiniz başlıktır — ad, rapor cihazdan çıkmadan önce kaldırılır.</p>
+<p>Kimlik yalnızca bu kurulum için Crashlytics tarafından üretilir. Reklam kimliği değildir, hesabınızla ilişkilendirilmez ve uygulamayı yeniden kurduğunuzda yenisi oluşur.</p>
+<h3>1.4 Satın alma</h3>
 <p>Uygulama içi satın alma App Store ve Google Play üzerinden yürür. Ödeme bilgilerinizi <strong>görmüyoruz ve saklamıyoruz</strong>; mağaza yalnızca satın almanın geçerli olup olmadığını bildirir.</p>
 <hr>
 <h2>2. Toplamadığımız veriler</h2>
-<ul><li>Reklam kimliği, reklam ağı, izleme pikseli <strong>yok</strong></li><li>Analitik, kullanım istatistiği, çökme raporlama <strong>yok</strong></li><li>Konum, rehber, takvim, mikrofon erişimi <strong>yok</strong></li><li>Üçüncü taraflara veri satışı ya da paylaşımı <strong>yok</strong></li></ul>
+<ul><li>Reklam kimliği, reklam ağı, izleme pikseli <strong>yok</strong></li><li>Uygulamayı nasıl kullandığınıza dair analitik <strong>yok</strong>: ekran görüntülenmesi, oturum süresi, özellik sayacı tutulmuyor. Gönderilebilecek tek şey bir kusurdur, o da anahtarı açık bırakırsanız (bkz. 1.3)</li><li>Konum, rehber, takvim, mikrofon erişimi <strong>yok</strong></li><li>Üçüncü taraflara veri satışı ya da paylaşımı <strong>yok</strong></li></ul>
 <hr>
 <h2>3. İzinler</h2>
 <table>
@@ -80,7 +90,7 @@
 <p>Uygulama 13 yaş altındaki çocuklara yönelik değildir ve bilerek onlardan veri toplamaz.</p>
 <hr>
 <h2>7. Kullandığımız hizmetler</h2>
-<ul><li><strong>Google Firebase</strong> (Authentication, Cloud Firestore) — yalnızca bulut özelliği için. Veriler Avrupa bölgesinde tutulur. <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li><li><strong>Apple App Store / Google Play</strong> — satın alma doğrulaması.</li></ul>
+<ul><li><strong>Google Firebase</strong> (Authentication, Cloud Firestore) — yalnızca bulut özelliği için. Veriler Avrupa bölgesinde tutulur. <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li><li><strong>Google Firebase Crashlytics</strong> — yalnızca hata raporları ve yalnızca Ayarlar → Gizlilik&#x27;teki anahtar açıkken. Bkz. 1.3. <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li><li><strong>Apple App Store / Google Play</strong> — satın alma doğrulaması.</li></ul>
 <hr>
 <h2>8. Değişiklikler</h2>
 <p>Bu politika değişirse güncel sürüm bu adreste yayımlanır ve &quot;son güncelleme&quot; tarihi değişir. Önemli bir değişiklikte uygulama içinde bilgilendirme yapılır.</p>
