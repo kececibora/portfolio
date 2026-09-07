@@ -1,4 +1,6 @@
 import { MotionConfig } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { LanguageProvider, useLang } from './i18n/LanguageContext'
 import { Background } from './components/Background'
 import { Navbar } from './components/Navbar'
@@ -39,6 +41,8 @@ export default function App() {
       <MotionConfig reducedMotion="user">
         <Portfolio />
       </MotionConfig>
+      <Analytics />
+      <SpeedInsights />
     </LanguageProvider>
   )
 }
