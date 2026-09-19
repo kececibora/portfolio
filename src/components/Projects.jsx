@@ -63,7 +63,7 @@ export function Projects() {
 
   const byCode = Object.fromEntries(p.items.map((it) => [it.code, it]))
   const groups = p.groups.map((g) => ({ ...g, items: g.codes.map((c) => byCode[c]).filter(Boolean) }))
-  const esp32 = byCode['hardware/esp32-lab']
+  const labProjects = ['ai/stonenet', 'hardware/esp32-lab'].map((code) => byCode[code]).filter(Boolean)
 
   // lightbox: close on Escape + lock background scroll while open
   useEffect(() => {
@@ -130,53 +130,56 @@ export function Projects() {
         ))}
       </motion.div>
 
-      {/* hardware sheet — stays a wide standalone card */}
-      {esp32 && (
-        <motion.article
-          variants={staggerItem}
-          initial={reduce ? 'show' : 'hidden'}
-          whileInView="show"
-          viewport={{ once: true, margin: '0px 0px -8% 0px' }}
-          className="group relative mt-5 overflow-hidden rounded-2xl border border-line bg-panel/50 backdrop-blur-sm transition-all duration-300 hover:border-accent/40 hover:shadow-glow"
-        >
-          <div className="relative h-40 overflow-hidden border-b border-line bg-ink-2 sm:h-44">
-            <div className="blueprint-grid absolute inset-0 opacity-70" />
-            <img
-              src={esp32.image}
-              alt={esp32.name}
-              loading="lazy"
-              className="absolute inset-0 m-auto max-h-[80%] w-[92%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-            <span className="absolute left-4 top-4 z-10 font-mono text-[11px] tracking-[0.2em] text-faint">
-              FIG. HW
-            </span>
-            <button
-              type="button"
-              onClick={(event) => setLightbox({ src: esp32.image, alt: esp32.name, trigger: event.currentTarget })}
-              aria-label={`${esp32.name} — ${p.enlarge}`}
-              className="absolute inset-0 z-20 flex items-start justify-end p-3 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
-            >
-              <span className="flex items-center gap-1 rounded-lg border border-line/70 bg-ink/80 px-2 py-1 font-mono text-[10px] tracking-wide text-muted opacity-100 backdrop-blur-sm transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
-                <Maximize2 size={12} />
-                {p.enlarge}
+      {/* model training on the left, embedded systems on the right */}
+      <div className="mt-5 grid gap-5 md:grid-cols-2">
+        {labProjects.map((project) => (
+          <motion.article
+            key={project.code}
+            variants={staggerItem}
+            initial={reduce ? 'show' : 'hidden'}
+            whileInView="show"
+            viewport={{ once: true, margin: '0px 0px -8% 0px' }}
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-panel/50 backdrop-blur-sm transition-all duration-300 hover:border-accent/40 hover:shadow-glow"
+          >
+            <div className="relative h-40 overflow-hidden border-b border-line bg-ink-2 sm:h-44">
+              <div className="blueprint-grid absolute inset-0 opacity-70" />
+              <img
+                src={project.image}
+                alt={project.name}
+                loading="lazy"
+                className="absolute inset-0 m-auto max-h-[80%] w-[92%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+              <span className="absolute left-3 top-3 z-10 rounded-lg border border-line/70 bg-ink/80 px-2 py-1 font-mono text-[10px] tracking-[0.2em] text-faint backdrop-blur-sm">
+                {project.figure}
               </span>
-            </button>
-          </div>
-          <div className="flex flex-wrap items-center justify-between gap-3 p-5">
-            <div className="min-w-0">
-              <h3 className="font-display text-lg font-semibold text-text">{esp32.name}</h3>
-              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted">{esp32.desc}</p>
+              <button
+                type="button"
+                onClick={(event) => setLightbox({ src: project.image, alt: project.name, trigger: event.currentTarget })}
+                aria-label={`${project.name} — ${p.enlarge}`}
+                className="absolute inset-0 z-20 flex items-start justify-end p-3 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
+              >
+                <span className="flex items-center gap-1 rounded-lg border border-line/70 bg-ink/80 px-2 py-1 font-mono text-[10px] tracking-wide text-muted opacity-100 backdrop-blur-sm transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+                  <Maximize2 size={12} />
+                  {p.enlarge}
+                </span>
+              </button>
             </div>
-            <ul className="flex flex-wrap gap-2">
-              {esp32.tags.map((tag) => (
-                <li key={tag} className="rounded-md border border-line/70 bg-ink/60 px-2 py-0.5 font-mono text-[11px] text-muted">
-                  {tag}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.article>
-      )}
+            <div className="flex flex-1 flex-col gap-4 p-5">
+              <div className="min-w-0">
+                <h3 className="font-display text-lg font-semibold text-text">{project.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{project.desc}</p>
+              </div>
+              <ul className="mt-auto flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <li key={tag} className="rounded-md border border-line/70 bg-ink/60 px-2 py-0.5 font-mono text-[11px] text-muted">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.article>
+        ))}
+      </div>
 
       {/* group browser dialog */}
       <AnimatePresence>
@@ -189,7 +192,7 @@ export function Projects() {
         )}
       </AnimatePresence>
 
-      {/* lightbox for the hardware sheet */}
+      {/* lightbox for the lab diagrams */}
       <AnimatePresence>
         {lightbox && (
           <motion.div
