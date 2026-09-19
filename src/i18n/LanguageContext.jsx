@@ -23,11 +23,23 @@ function writeStoredLang(lang) {
   }
 }
 
+// first visit: follow the browser's primary language, English for everyone
+// else. navigator can be missing pieces in older WebViews — guard it.
+function detectLang() {
+  try {
+    const primary = window.navigator.languages?.[0] || window.navigator.language || ''
+    return primary.toLowerCase().startsWith('tr') ? 'tr' : 'en'
+  } catch {
+    return 'tr'
+  }
+}
+
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState(() => {
     if (typeof window === 'undefined') return 'tr'
     const saved = readStoredLang()
-    return saved === 'en' || saved === 'tr' ? saved : 'tr'
+    if (saved === 'en' || saved === 'tr') return saved
+    return detectLang()
   })
 
   useEffect(() => {
