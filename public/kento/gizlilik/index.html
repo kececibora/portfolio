@@ -31,7 +31,7 @@
 <main>
 <p class="langlink"><a href="/kento/privacy/">English version</a></p>
 <h1>Gizlilik Politikası — Kento</h1>
-<p><strong>Son güncelleme:</strong> 28 Ağustos 2026 <strong>Uygulama:</strong> Kento (<code>com.borakececi.offlinebadukai</code>) <strong>Veri sorumlusu:</strong> Lysa Software Media — Bora Keçeci <strong>İletişim:</strong> rbkececi@gmail.com</p>
+<p><strong>Son güncelleme:</strong> 30 Eylül 2026 <strong>Uygulama:</strong> Kento (<code>com.borakececi.offlinebadukai</code>) <strong>Veri sorumlusu:</strong> Lysa Software Media — Bora Keçeci <strong>İletişim:</strong> rbkececi@gmail.com</p>
 <hr>
 <h2>Kısaca</h2>
 <p>Bu uygulama çevrimdışı çalışır. Maçlarınız, analizleriniz ve fotoğraflarınız <strong>cihazınızda kalır</strong>. Yapay zekâ analizi telefonunuzun kendi işlemcisinde koşar; hiçbir maç bir sunucuya gönderilmez.</p>
@@ -45,7 +45,8 @@
 <tr><td>Analiz sonuçları</td><td>Tekrar hesaplamamak için</td><td>Cihazın uygulama klasörü</td></tr>
 <tr><td>Ayarlar (dil, ses, gösterim)</td><td>Tercihlerinizi hatırlamak</td><td>Cihaz tercihleri</td></tr>
 <tr><td>Günlük analiz sayacı</td><td>Ücretsiz hakkı takip etmek</td><td>Cihazın uygulama klasörü</td></tr>
-<tr><td>Tahta fotoğrafları</td><td>Pozisyonu okumak</td><td><strong>Hiç saklanmıyor</strong> — okunur, pozisyon çıkarılır, fotoğraf atılır</td></tr>
+<tr><td>Tahta fotoğrafları</td><td>Pozisyonu okumak</td><td><strong>Hiç saklanmıyor</strong> — okunur, pozisyon çıkarılır, fotoğraf atılır. Tek istisna sizin başlattığınız gönderim, bkz. 1.5</td></tr>
+<tr><td>Sesle hamle girişi (açıksa)</td><td>Söylediğiniz hamleyi tahtaya koymak</td><td><strong>Hiç saklanmıyor</strong> — ses telefonun kendi tanıyıcısında yazıya çevrilir, yalnızca hamle kaydedilir. Ses kaydı tutulmaz</td></tr>
 </table>
 <p>Bu verilerin hiçbiri cihazınızdan çıkmaz. Uygulamayı silerseniz hepsi silinir.</p>
 <h3>1.2 Bulut özelliğini kullanırsanız</h3>
@@ -70,21 +71,35 @@
 <p>Kimlik yalnızca bu kurulum için Crashlytics tarafından üretilir. Reklam kimliği değildir, hesabınızla ilişkilendirilmez ve uygulamayı yeniden kurduğunuzda yenisi oluşur.</p>
 <h3>1.4 Satın alma</h3>
 <p>Uygulama içi satın alma App Store ve Google Play üzerinden yürür. Ödeme bilgilerinizi <strong>görmüyoruz ve saklamıyoruz</strong>; mağaza yalnızca satın almanın geçerli olup olmadığını bildirir.</p>
+<h3>1.5 Tanımayı geliştirmek için gönderdiğiniz fotoğraflar</h3>
+<p>Fotoğraftan pozisyon okurken tahtanın köşelerini elle işaretlediyseniz sonuç ekranında &quot;Tanımayı geliştirmeye yardım et&quot; seçeneği çıkar. Bu <strong>yalnızca siz &quot;Gönder&quot;e dokunursanız</strong> çalışır; kendiliğinden hiçbir fotoğraf gönderilmez. İlk gönderimden önce ne gönderileceği açıklanır ve onayınız istenir; onay Ayarlar → Gizlilik → &quot;Tanıma fotoğraflarını paylaş&quot; anahtarıyla istediğiniz an geri alınabilir.</p>
+<table>
+<tr><th>veri</th><th>neden</th><th>saklandığı yer</th></tr>
+<tr><td>Fotoğrafın kendisi (küçültülmüş, EXIF bilgisi silinmiş)</td><td>Tahta tanıma modelini eğitmek</td><td>Cloud Firestore (Google LLC), inceleme bitene kadar</td></tr>
+<tr><td>İşaretlediğiniz köşeler ve tahta boyutu</td><td>Modelin doğru cevabı</td><td>Cloud Firestore</td></tr>
+<tr><td>Uygulamanın kendi köşe tahmini</td><td>Modelin nerede yanıldığını görmek</td><td>Cloud Firestore</td></tr>
+<tr><td>İşletim sistemi ve uygulama sürümü</td><td>Hangi cihazlarda sorun olduğunu görmek</td><td>Cloud Firestore</td></tr>
+</table>
+<p><strong>Gönderilmeyenler:</strong> hesabınız, adınız, e-postanız, konumunuz, fotoğrafın içindeki konum ve cihaz bilgileri (EXIF gönderilmeden önce tamamen silinir). Gönderim anonimdir; fotoğraf hiçbir hesapla ya da kurulum kimliğiyle ilişkilendirilmez.</p>
+<p><strong>Kişi görünen fotoğraflar gönderilmez.</strong> Gönderilmeden önce cihazda yüz tespiti çalışır; bir yüz bile bulunursa fotoğraf cihazdan çıkmaz ve size söylenir. Tahta olmayan fotoğraflar da gönderilmez.</p>
+<p>Fotoğraflar yalnızca tahta tanımayı geliştirmek için kullanılır, üçüncü taraflarla paylaşılmaz. Geliştirici her fotoğrafı elle inceler; inceleme bittiğinde fotoğraf buluttan silinir ve yalnızca geliştiricinin kendi eğitim kümesinde kalır. Kişi görünen bir fotoğraf incelemeye takılırsa eğitim kümesine alınmadan silinir.</p>
 <hr>
 <h2>2. Toplamadığımız veriler</h2>
-<ul><li>Reklam kimliği, reklam ağı, izleme pikseli <strong>yok</strong></li><li>Uygulamayı nasıl kullandığınıza dair analitik <strong>yok</strong>: ekran görüntülenmesi, oturum süresi, özellik sayacı tutulmuyor. Gönderilebilecek tek şey bir kusurdur, o da anahtarı açık bırakırsanız (bkz. 1.3)</li><li>Konum, rehber, takvim, mikrofon erişimi <strong>yok</strong></li><li>Üçüncü taraflara veri satışı ya da paylaşımı <strong>yok</strong></li></ul>
+<ul><li>Reklam kimliği, reklam ağı, izleme pikseli <strong>yok</strong></li><li>Uygulamayı nasıl kullandığınıza dair analitik <strong>yok</strong>: ekran görüntülenmesi, oturum süresi, özellik sayacı tutulmuyor. Gönderilebilecek tek şey bir kusurdur, o da anahtarı açık bırakırsanız (bkz. 1.3)</li><li>Konum, rehber ve takvim erişimi <strong>yok</strong>. Mikrofonu yalnızca sesle hamle girişi açıkken ve siz dinlemeyi başlattığınızda kullanıyoruz; ses hiçbir yere gönderilmez</li><li>Üçüncü taraflara veri satışı ya da paylaşımı <strong>yok</strong></li></ul>
 <hr>
 <h2>3. İzinler</h2>
 <table>
 <tr><th>izin</th><th>ne zaman isteniyor</th><th>ne için</th></tr>
 <tr><td>Kamera</td><td>&quot;Fotoğraftan pozisyon&quot; ile fotoğraf çekerken</td><td>Tahtanın fotoğrafını çekmek</td></tr>
 <tr><td>Fotoğraf galerisi</td><td>Galeriden seçerken</td><td>Var olan bir fotoğrafı okumak</td></tr>
+<tr><td>Mikrofon (iOS&#x27;ta ayrıca Konuşma Tanıma)</td><td>Ayarlar&#x27;da &quot;Sesle hamle girişi&quot; açıkken mikrofon düğmesine ilk dokunduğunuzda</td><td>Söylediğiniz hamleyi tanımak; tanıma cihazda yapılır</td></tr>
 </table>
-<p>İkisi de yalnızca o an, o iş için kullanılır. Fotoğraf uygulamadan çıkmaz ve cihazda saklanmaz — okunur, taşların yeri çıkarılır, görüntü atılır.</p>
+<p>Hepsi yalnızca o an, o iş için kullanılır. Fotoğraf cihazda saklanmaz — okunur, taşların yeri çıkarılır, görüntü atılır. Uygulamadan çıkması için sizin &quot;Gönder&quot;e dokunmanız gerekir (bkz. 1.5).</p>
 <hr>
 <h2>4. Verileriniz ne kadar saklanıyor</h2>
 <p>Cihazınızdaki veriler siz silene ya da uygulamayı kaldırana kadar kalır.</p>
-<p>Buluttaki veriler siz silene kadar kalır. <strong>Hesabınızı ve buluttaki tüm maçlarınızı uygulama içinden silebilirsiniz:</strong> Kitaplık → Bulut → &quot;Hesabımı sil&quot;. Silme kalıcıdır ve geri alınamaz.</p>
+<p>Tanımayı geliştirmek için gönderdiğiniz fotoğraflar (1.5) geliştirici inceleyene kadar bulutta kalır, sonra buluttan silinir.</p>
+<p>Buluttaki maçlarınız siz silene kadar kalır. <strong>Hesabınızı ve buluttaki tüm maçlarınızı uygulama içinden silebilirsiniz:</strong> Kitaplık → Bulut → &quot;Hesabımı sil&quot;. Silme kalıcıdır ve geri alınamaz.</p>
 <hr>
 <h2>5. Haklarınız (KVKK ve GDPR)</h2>
 <p>Şunları talep edebilirsiniz: verilerinize erişim, düzeltme, silme, işlemeye itiraz ve taşınabilirlik.</p>
@@ -94,7 +109,7 @@
 <p>Uygulama 13 yaş altındaki çocuklara yönelik değildir ve bilerek onlardan veri toplamaz.</p>
 <hr>
 <h2>7. Kullandığımız hizmetler</h2>
-<ul><li><strong>Google Firebase</strong> (Authentication, Cloud Firestore) — yalnızca bulut özelliği için. Veriler Avrupa bölgesinde tutulur. <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li><li><strong>Google Firebase Crashlytics</strong> — yalnızca hata raporları ve yalnızca Ayarlar → Gizlilik&#x27;teki anahtar açıkken. Bkz. 1.3. <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li><li><strong>Apple App Store / Google Play</strong> — satın alma doğrulaması.</li></ul>
+<ul><li><strong>Google Firebase</strong> (Authentication, Cloud Firestore) — bulut özelliği ve sizin gönderdiğiniz tanıma fotoğrafları için (bkz. 1.5). Veriler Avrupa bölgesinde tutulur. <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li><li><strong>Google Firebase Crashlytics</strong> — yalnızca hata raporları ve yalnızca Ayarlar → Gizlilik&#x27;teki anahtar açıkken. Bkz. 1.3. <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li><li><strong>Apple App Store / Google Play</strong> — satın alma doğrulaması.</li></ul>
 <hr>
 <h2>8. Değişiklikler</h2>
 <p>Bu politika değişirse güncel sürüm bu adreste yayımlanır ve &quot;son güncelleme&quot; tarihi değişir. Önemli bir değişiklikte uygulama içinde bilgilendirme yapılır.</p>
