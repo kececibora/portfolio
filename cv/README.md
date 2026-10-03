@@ -46,7 +46,7 @@ Baskıya hazır, **iki sayfa** A4, **İngilizce** CV. 1. sayfa Canva'daki "Siyah
 - **Kento Google Play'de yayında** (`com.borakececi.offlinebadukai`); CV'de yayınlanmış uygulama olarak geçer. StoneNet (PyTorch CNN) ayrı bir başlık — AI/ML tarafını gösteren tek madde o.
 - GitHub olarak yalnızca `kececibora` (bksbora bilinçli olarak yok); site: rbkececi.com.
 - **Chess Trainer CV'de kullanılmıyor** (istek üzerine çıkarıldı).
-- 1. sayfadaki küçük şeritlerde etiket/başlık yok (şablon orijinaline sadık); 2. sayfadaki kartlarda ad + bir cümle + mağaza/adres var.
+- 1. sayfada uygulama görseli **yok** (Bora, 2026-10-03: "ikinci sayfada var zaten"); tüm ekran görüntüleri 2. sayfadaki kartlarda, ad + bir cümle + mağaza/adres ile.
 - 2. sayfa düzeni: Published Apps (4) → StoneNet banner → BKS ailesi (4) → Client Web & Systems (4). Yeni proje eklerken satırı 4'te tut; 5. kart taşırır.
 - gotimer görselleri Google Play'deki **v2 mağaza görselleri** (koyu ahşap tasarım).
 - `municipal-crop.jpg` kenarları kırpılmış versiyondur (orijinal: rbkececiWebSite/public/projects/municipal.webp).

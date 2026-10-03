@@ -87,23 +87,17 @@
   .plist .prov{ color:var(--gray); }
 
   .just{ text-align:justify; }
-  .summary p{ margin:0; font-size:8.8pt; }
+  .summary p{ margin:0; font-size:9pt; }
 
-  .xp{ margin-bottom:2mm; break-inside:avoid; }
+  .xp{ margin-bottom:3.2mm; break-inside:avoid; }
   .xp-head{ display:flex; justify-content:space-between; align-items:baseline; gap:6mm; }
   .xp-head h3{ margin:0; font-size:11pt; font-weight:700; letter-spacing:.03em; text-transform:uppercase; }
   .xp-date{ font-size:9pt; color:var(--ink); white-space:nowrap; }
-  .xp-co{ margin:.6mm 0 1mm; font-size:9pt; }
-  .xp p, .xp .dash{ margin:0 0 .6mm; font-size:8.6pt; }
+  .xp-co{ margin:.8mm 0 1.4mm; font-size:9pt; }
+  .xp p, .xp .dash{ margin:0 0 .9mm; font-size:8.9pt; }
   .dash{ padding-left:3.2mm; text-indent:-3.2mm; }
   .dash::before{ content:"-\00a0"; }
 
-  /* small screenshot strips under each role — the big versions live on page 2 */
-  .strip{ display:flex; gap:3mm; margin:1.8mm 0 .4mm; justify-content:flex-start; align-items:flex-start; }
-  .shot{ text-align:center; }
-  .shot img{
-    height:16mm; width:auto; display:block; border-radius:1.2mm; border:1px solid var(--hair);
-  }
 
   /* ---------- page 2: selected projects ---------- */
   .p2-head{
@@ -243,12 +237,6 @@
             <p class="dash just">Volunteered to design, develop, and publish <b>Go Baduk Weiqi Timer</b>, a Go (Baduk) tournament clock, on <a href="https://play.google.com/store/apps/details?id=com.borakececi.gotimer">Google Play</a> and the <a href="https://apps.apple.com/app/go-baduk-weiqi-timer/id6790043280">App Store</a> for the Turkish Go Players Association</p>
             <p class="dash just">Designed and developed <b>Siege Duel: Trap Strategy</b> (Kapan), a board game with a pure-Dart game engine, a 3-level AI, and ranked online multiplayer (matchmaking, Elo, leaderboards) on Firebase &mdash; on the <a href="https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.borakececi.block_war">Google Play</a></p>
             <p class="dash just">Developed Flutter apps for municipal services &mdash; water-usage billing, payment integrations, dashboards &mdash; and field collection with QR scanning, offline support and Bluetooth receipt printing</p>
-            <div class="strip">
-              <div class="shot"><img src="data:image/webp;base64,{{IMG:kento}}" alt="Kento"></div>
-              <div class="shot"><img src="data:image/jpeg;base64,{{IMG:gt-timer}}" alt="gotimer clock"></div>
-              <div class="shot"><img src="data:image/webp;base64,{{IMG:kapan}}" alt="Kapan"></div>
-              <div class="shot"><img src="data:image/jpeg;base64,{{IMG:municipal-crop}}" alt="Municipal apps"></div>
-            </div>
           </div>
 
           <div class="xp">
@@ -258,12 +246,6 @@
             <p class="dash just">Integrated with Logo Tiger ERP for real-time purchasing and stock synchronization</p>
             <p class="dash just">Developed PDF/Excel outputs for quotes and orders, chart-based reporting and dashboard screens</p>
             <p class="dash just">Built <b>BKS Smart</b>, a Bluetooth/ESP32 control app for folding-glass and pergola systems, and <b>BKS Messenger</b>, the internal chat app with WebRTC voice/video calls</p>
-            <div class="strip">
-              <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-panel}}" alt="BKS Panel"></div>
-              <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-flow}}" alt="BKS Flow"></div>
-              <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-smart}}" alt="BKS Smart"></div>
-              <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-messenger}}" alt="BKS Messenger"></div>
-            </div>
           </div>
 
           <div class="xp">
