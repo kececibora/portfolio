@@ -32,4 +32,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/account-deletion/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/account-deletion/"/>
   </url>
+  <url>
+    <loc>https://rbkececi.com/kento/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rbkececi.com/kento/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/en/"/>
+  </url>
+  <url>
+    <loc>https://rbkececi.com/kento/en/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rbkececi.com/kento/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/en/"/>
+  </url>
 </urlset>

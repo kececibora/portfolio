@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kento — Go maçını çek, kaydını al, incele</title>
+<meta name="description" content="Kento gerçek bir Go tahtasının videosunu hamle hamle maç kaydına çevirir ve KataGo ile cihazın üzerinde inceler. Fotoğraf, video, canlı kayıt; hiçbir şey telefondan çıkmaz.">
+<link rel="icon" href="/favicon.svg">
+<link rel="canonical" href="https://rbkececi.com/kento/">
+<link rel="alternate" hreflang="tr" href="https://rbkececi.com/kento/">
+<link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/en/">
+<link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/en/">
+<style>
+  :root { color-scheme: dark; --ink:#0f1e27; --ink2:#16303c; --paper:#f3ede1; --soft:#d9d3c7; --muted:#8fa3ad; --coral:#ff6b4a; }
+  body { margin:0; background:linear-gradient(180deg,#0b171e,var(--ink) 40%,var(--ink2)); color:var(--soft);
+         font:16px/1.65 -apple-system,'Segoe UI',Roboto,sans-serif; min-height:100vh; }
+  main { max-width:820px; margin:0 auto; padding:56px 20px 96px; }
+  h1 { color:var(--paper); font-size:2.1rem; line-height:1.2; margin:.2em 0 .3em; }
+  h2 { color:var(--paper); font-size:1.3rem; margin-top:2.4em; }
+  p { margin:.7em 0; }
+  a { color:var(--coral); }
+  .kicker { display:inline-block; width:40px; height:4px; background:var(--coral); border-radius:2px; margin-bottom:10px; }
+  .lead { font-size:1.15rem; color:var(--paper); }
+  .video { position:relative; padding-top:56.25%; margin:1.4em 0; border-radius:16px; overflow:hidden; background:#000; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:1.2em 0; }
+  .card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:16px 18px; }
+  .card b { color:var(--paper); display:block; margin-bottom:4px; }
+  .cta { display:inline-block; background:var(--coral); color:var(--ink); font-weight:700; padding:12px 20px; border-radius:12px; text-decoration:none; margin:8px 8px 8px 0; }
+  .ghost { display:inline-block; border:1px solid rgba(255,107,74,.6); color:var(--paper); padding:11px 18px; border-radius:12px; text-decoration:none; margin:8px 8px 8px 0; }
+  .fine { color:var(--muted); font-size:.92em; }
+  .langlink { font-size:.85em; opacity:.8; }
+  footer { margin-top:3em; padding-top:1.2em; border-top:1px solid rgba(255,255,255,.08); color:var(--muted); font-size:.9em; }
+</style>
+</head>
+<body>
+<main>
+<p class="langlink"><a href="/kento/en/">English</a></p>
+<span class="kicker"></span>
+<h1>Kento: Go maçını çek, kaydını al, incele</h1>
+<p class="lead">Telefonu gerçek bir Go tahtasının karşısına daya ve maçı oyna. Maç bitince videoyu Kento'ya ver: tahtayı bulur, her taşın konduğu anı yakalar, hamleleri sırasıyla okur ve maç kaydını senin yerine yazar. Sonra KataGo ile inceleme, tamamı telefonun üzerinde.</p>
+<p>
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai">Google Play'de aç</a>
+  <a class="ghost" href="https://www.youtube.com/watch?v=cLgWRYM_CTI">Tanıtım videosu</a>
+</p>
+<p class="fine">iOS sürümü App Store incelemesinde.</p>
+
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/cLgWRYM_CTI" title="Kento tanıtım" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+
+<h2>Ne yapıyor</h2>
+<div class="grid">
+  <div class="card"><b>Videodan maç kaydı</b>Sabit kamerayla çekilmiş maç videosu, hamle hamle kayda dönüşür. Go kuralları hata düzeltici olarak çalışır; yasa dışı hamle kayda giremez.</div>
+  <div class="card"><b>Canlı kayıt</b>Telefonu tahtaya daya, sen oynarken hamleler kendiliğinden sayılsın.</div>
+  <div class="card"><b>Fotoğraftan pozisyon</b>Yarım kalmış maçın fotoğrafını çek, pozisyon saniyeler içinde ekranda. Köşeleri ve tahta boyutunu kendisi bulur.</div>
+  <div class="card"><b>Puanla inceleme</b>Her hata puanla ölçülür, en büyüğü tek dokunuş uzağında; istediğin hamleden dallanıp oynaman gerekeni dene.</div>
+  <div class="card"><b>70.000 profesyonel maç</b>Dosaku'dan AlphaGo'ya 110 paket; yaklaşık 3.000'i uygulamanın içinde.</div>
+  <div class="card"><b>Hiçbir şey telefondan çıkmaz</b>Tahta okuyucu da analiz motoru da cihazda çalışır. Hesap gerekmez; bulut yedeği isteğe bağlıdır.</div>
+</div>
+
+<h2>Tahtayı nasıl okuyor</h2>
+<p>Tahta okuyucu benim eğittiğim iki küçük evrişimli ağdan oluşuyor. Biri tahtanın köşelerini bulur (kaba tahmin, sonra köşe başına ince ayar); diğeri düzeltilmiş tahtadaki 361 kesişimin her birini boş, siyah ya da beyaz olarak okur. Eğitim verisi de bana ait: sentetik tahtalar, elle etiketlediğim gerçek fotoğraflar ve bilinen kaydıyla hizalanarak otomatik etiketlenen maç videoları.</p>
+<p>Eğitime hiç girmemiş 102 tahtada taş okuyucunun dengeli doğruluğu <strong>%99,1</strong>. Ağırlıklar uygulamanın içinde; hiçbir görüntü telefondan çıkmaz.</p>
+<p class="fine">Analiz motoru KataGo: MIT lisanslı, açık kaynak, kaynaktan derlenmiş ve tamamı cihazda çalışıyor. Kento'nun geri kalanı (kamera hattı, iki ağ, video ve canlı kayıt, arayüz) benim işim.</p>
+
+<h2>Ücret</h2>
+<p>Ücretsiz: günde üç tam maç incelemesi; aynı maçı yeniden incelemek her zaman ücretsiz. Tek seferlik satın alma sınırsız incelemeyi açar. Abonelik yok, reklam yok.</p>
+
+<footer>
+  <p><a href="/kento/gizlilik/">Gizlilik</a> · <a href="/kento/kosullar/">Kullanım koşulları</a> · <a href="/kento/hesap-silme/">Hesap silme</a> · Destek: <a href="mailto:rbkececi@gmail.com">rbkececi@gmail.com</a></p>
+  <p>Lysa Software Media — Bora Keçeci</p>
+</footer>
+</main>
+</body>
+</html>

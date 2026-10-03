@@ -249,7 +249,7 @@ export const content = {
           ],
           tags: ['Flutter', 'KataGo', 'C++', 'Bilgisayarla Görü'],
           code: 'app/kento',
-          status: 'Yakında App Store ve Google Play’de',
+          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai' }],
           image: '/projects/kento.webp',
         },
         {
@@ -669,7 +669,7 @@ export const content = {
           ],
           tags: ['Flutter', 'KataGo', 'C++', 'Computer Vision'],
           code: 'app/kento',
-          status: 'Coming soon to the App Store and Google Play',
+          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai' }],
           image: '/projects/kento.webp',
         },
         {

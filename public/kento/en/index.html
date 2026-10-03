@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kento — Film your Go game, get the record, review it</title>
+<meta name="description" content="Kento turns a video of a real Go board into a move-by-move game record and reviews it with KataGo on the device. Photo, video, live recording; nothing leaves your phone.">
+<link rel="icon" href="/favicon.svg">
+<link rel="canonical" href="https://rbkececi.com/kento/en/">
+<link rel="alternate" hreflang="tr" href="https://rbkececi.com/kento/">
+<link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/en/">
+<link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/en/">
+<style>
+  :root { color-scheme: dark; --ink:#0f1e27; --ink2:#16303c; --paper:#f3ede1; --soft:#d9d3c7; --muted:#8fa3ad; --coral:#ff6b4a; }
+  body { margin:0; background:linear-gradient(180deg,#0b171e,var(--ink) 40%,var(--ink2)); color:var(--soft);
+         font:16px/1.65 -apple-system,'Segoe UI',Roboto,sans-serif; min-height:100vh; }
+  main { max-width:820px; margin:0 auto; padding:56px 20px 96px; }
+  h1 { color:var(--paper); font-size:2.1rem; line-height:1.2; margin:.2em 0 .3em; }
+  h2 { color:var(--paper); font-size:1.3rem; margin-top:2.4em; }
+  p { margin:.7em 0; }
+  a { color:var(--coral); }
+  .kicker { display:inline-block; width:40px; height:4px; background:var(--coral); border-radius:2px; margin-bottom:10px; }
+  .lead { font-size:1.15rem; color:var(--paper); }
+  .video { position:relative; padding-top:56.25%; margin:1.4em 0; border-radius:16px; overflow:hidden; background:#000; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:1.2em 0; }
+  .card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:16px 18px; }
+  .card b { color:var(--paper); display:block; margin-bottom:4px; }
+  .cta { display:inline-block; background:var(--coral); color:var(--ink); font-weight:700; padding:12px 20px; border-radius:12px; text-decoration:none; margin:8px 8px 8px 0; }
+  .ghost { display:inline-block; border:1px solid rgba(255,107,74,.6); color:var(--paper); padding:11px 18px; border-radius:12px; text-decoration:none; margin:8px 8px 8px 0; }
+  .fine { color:var(--muted); font-size:.92em; }
+  .langlink { font-size:.85em; opacity:.8; }
+  footer { margin-top:3em; padding-top:1.2em; border-top:1px solid rgba(255,255,255,.08); color:var(--muted); font-size:.9em; }
+</style>
+</head>
+<body>
+<main>
+<p class="langlink"><a href="/kento/">Türkçe</a></p>
+<span class="kicker"></span>
+<h1>Kento: film your Go game, get the record, review it</h1>
+<p class="lead">Prop your phone in front of a real Go board and play. When the game is over, hand Kento the video: it finds the board, watches for the moment each stone lands, reads the moves in order and writes the game record for you. Then you review it with KataGo, all on the phone.</p>
+<p>
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai">Open on Google Play</a>
+  <a class="ghost" href="https://www.youtube.com/watch?v=87ywgmIbDcI">Watch the intro</a>
+</p>
+<p class="fine">The iOS version is in App Store review.</p>
+
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/87ywgmIbDcI" title="Kento intro" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+
+<h2>What it does</h2>
+<div class="grid">
+  <div class="card"><b>Game record from a video</b>A fixed-camera video of a game becomes a move-by-move record. The rules of Go act as an error corrector; no illegal move gets in.</div>
+  <div class="card"><b>Live recording</b>Point the phone at the board and the moves count themselves while you play.</div>
+  <div class="card"><b>Position from a photo</b>Photograph an unfinished game and have the position on the screen in seconds. Corners and board size are found for you.</div>
+  <div class="card"><b>Review in points</b>Every mistake is measured in points, the biggest one is a tap away; branch off at any move and try what you should have played.</div>
+  <div class="card"><b>70,000 professional games</b>110 packs from Dosaku to AlphaGo; around 3,000 ship inside the app.</div>
+  <div class="card"><b>Nothing leaves the phone</b>The board reader and the analysis engine both run on the device. No account needed; cloud backup is optional.</div>
+</div>
+
+<h2>How it reads the board</h2>
+<p>The board reader is two small convolutional networks I trained myself. One finds the corners of the board (a coarse guess, then a per-corner refinement); the other reads each of the 361 intersections on the straightened board as empty, black or white. The training data is mine as well: synthetic boards, real photos I labelled by hand, and game videos labelled automatically by lining them up with their known records.</p>
+<p>On 102 boards kept out of training entirely, the stone reader reaches <strong>99.1%</strong> balanced accuracy. The weights ship inside the app; no image ever leaves the phone.</p>
+<p class="fine">The analysis engine is KataGo: MIT-licensed, open source, compiled from source and running entirely on the device. The rest of Kento (the camera pipeline, the two networks, video and live recording, the interface) is my own work.</p>
+
+<h2>Pricing</h2>
+<p>Free: three full game reviews a day; re-reviewing the same game is always free. A single one-time purchase unlocks unlimited reviews. No subscription, no ads.</p>
+
+<footer>
+  <p><a href="/kento/privacy/">Privacy</a> · <a href="/kento/terms/">Terms</a> · <a href="/kento/account-deletion/">Account deletion</a> · Support: <a href="mailto:rbkececi@gmail.com">rbkececi@gmail.com</a></p>
+  <p>Lysa Software Media — Bora Keçeci</p>
+</footer>
+</main>
+</body>
+</html>
