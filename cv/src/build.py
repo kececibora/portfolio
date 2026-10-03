@@ -23,11 +23,14 @@ def find_asset(name: str) -> pathlib.Path:
 def main() -> None:
     html = (SRC / "cv-template.html").read_text()
 
+    # MIME türü şablondan değil dosya uzantısından gelir; böylece bir görseli
+    # webp -> jpg çevirmek için şablona dokunmak gerekmez.
     def sub(m: re.Match) -> str:
         p = find_asset(m.group(1))
-        return base64.b64encode(p.read_bytes()).decode()
+        b64 = base64.b64encode(p.read_bytes()).decode()
+        return f"data:{MIME[p.suffix]};base64,{b64}"
 
-    out = re.sub(r"\{\{IMG:([a-z0-9-]+)\}\}", sub, html)
+    out = re.sub(r"data:image/[a-z]+;base64,\{\{IMG:([a-z0-9-]+)\}\}", sub, html)
     if "{{IMG" in out:
         sys.exit("HATA: doldurulamayan yer tutucu kaldı")
     OUT.write_text(out)

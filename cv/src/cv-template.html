@@ -36,18 +36,18 @@
   .page{
     width:210mm; min-height:296mm; background:var(--paper);
     box-shadow:0 24px 60px -28px rgba(15,23,32,.35);
-    padding:9.5mm 12mm 7mm; display:flex; flex-direction:column;
+    padding:8mm 12mm 6mm; display:flex; flex-direction:column;
   }
   @media (max-width: 850px){
     .page{ transform:scale(.62); transform-origin:top center; margin-bottom:calc(-296mm * .38); }
   }
 
   /* ---------- header ---------- */
-  .head{ display:grid; grid-template-columns:44mm 1fr; gap:6mm; align-items:start; margin-bottom:4mm; }
+  .head{ display:grid; grid-template-columns:44mm 1fr; gap:6mm; align-items:start; margin-bottom:2mm; }
   .photo-wrap{ text-align:center; }
   .photo{
-    width:36mm; height:36mm; border-radius:50%; object-fit:cover; object-position:50% 12%;
-    display:block; margin:1mm auto 2.5mm;
+    width:34mm; height:34mm; border-radius:50%; object-fit:cover; object-position:50% 12%;
+    display:block; margin:1mm auto 1.5mm;
   }
   .loc{ display:inline-flex; align-items:center; gap:1.6mm; font-size:8.3pt; color:var(--ink); }
   h1{
@@ -55,7 +55,7 @@
     line-height:1.05; text-transform:uppercase;
   }
   .subtitle{ margin-top:1.6mm; font-size:11.5pt; letter-spacing:.14em; text-transform:uppercase; font-weight:400; color:var(--ink); }
-  .contacts{ margin-top:4mm; display:grid; grid-template-columns:1fr 1.15fr; gap:2.2mm 8mm; }
+  .contacts{ margin-top:3mm; display:grid; grid-template-columns:1fr 1.15fr; gap:2.2mm 8mm; }
   .c-item{ display:flex; align-items:center; gap:2.6mm; font-size:8.8pt; }
   .c-item a{ text-decoration:underline; text-underline-offset:2px; }
   .c-item .plain{ text-decoration:none; }
@@ -66,15 +66,15 @@
   .cicon svg{ width:3.1mm; height:3.1mm; fill:#fff; }
 
   /* ---------- body ---------- */
-  .cols{ flex:1; display:grid; grid-template-columns:57mm 1fr; gap:0; }
+  .cols{ flex:1; min-height:0; display:grid; grid-template-columns:57mm 1fr; gap:0; }
   .left{ padding:2mm 6mm 0 0; border-right:1px solid var(--rule); }
   .right{ padding:2mm 0 0 7mm; }
 
   h2{
-    margin:0 0 2.6mm; font-size:12.5pt; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    margin:0 0 2mm; font-size:12.5pt; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
     padding-bottom:1.4mm; border-bottom:1px solid var(--hair);
   }
-  section{ margin-bottom:3.6mm; }
+  section{ margin-bottom:3mm; }
   .left section{ margin-bottom:4.6mm; }
 
   .edu{ margin-bottom:2.2mm; }
@@ -87,23 +87,52 @@
   .plist .prov{ color:var(--gray); }
 
   .just{ text-align:justify; }
-  .summary p{ margin:0; font-size:9pt; }
+  .summary p{ margin:0; font-size:8.8pt; }
 
-  .xp{ margin-bottom:2.4mm; break-inside:avoid; }
+  .xp{ margin-bottom:2mm; break-inside:avoid; }
   .xp-head{ display:flex; justify-content:space-between; align-items:baseline; gap:6mm; }
   .xp-head h3{ margin:0; font-size:11pt; font-weight:700; letter-spacing:.03em; text-transform:uppercase; }
   .xp-date{ font-size:9pt; color:var(--ink); white-space:nowrap; }
-  .xp-co{ margin:.8mm 0 1.4mm; font-size:9pt; }
-  .xp p, .xp .dash{ margin:0 0 .9mm; font-size:8.9pt; }
+  .xp-co{ margin:.6mm 0 1mm; font-size:9pt; }
+  .xp p, .xp .dash{ margin:0 0 .6mm; font-size:8.6pt; }
   .dash{ padding-left:3.2mm; text-indent:-3.2mm; }
   .dash::before{ content:"-\00a0"; }
 
-  .strip{ display:flex; gap:3mm; margin:2.2mm 0 .6mm; justify-content:flex-start; }
+  /* small screenshot strips under each role — the big versions live on page 2 */
+  .strip{ display:flex; gap:3mm; margin:1.8mm 0 .4mm; justify-content:flex-start; align-items:flex-start; }
   .shot{ text-align:center; }
   .shot img{
-    height:26mm; width:auto; display:block; border-radius:1.2mm; border:1px solid var(--hair);
+    height:16mm; width:auto; display:block; border-radius:1.2mm; border:1px solid var(--hair);
   }
-  .shot .cap{ margin-top:.9mm; font-size:6.6pt; color:var(--light); letter-spacing:.04em; }
+
+  /* ---------- page 2: selected projects ---------- */
+  .p2-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:6mm;
+    padding-bottom:1.8mm; margin-bottom:3.5mm; border-bottom:1px solid var(--rule);
+  }
+  .p2-head h1{ font-size:15pt; margin:0; }
+  .p2-sub{ margin-top:1mm; font-size:9.5pt; letter-spacing:.14em; text-transform:uppercase; }
+  .p2-links{ font-size:8.4pt; color:var(--gray); white-space:nowrap; }
+  .p2-links a{ text-decoration:none; }
+
+  .pset{ margin-bottom:3mm; }
+  .pset h2{ display:flex; justify-content:space-between; align-items:baseline; gap:4mm; }
+  .h2-note{ font-size:7.6pt; font-weight:400; letter-spacing:.06em; color:var(--light); text-transform:none; }
+
+  .cards{ display:grid; grid-template-columns:repeat(4, 1fr); gap:4mm; }
+  .card{ display:flex; flex-direction:column; align-items:center; text-align:center; break-inside:avoid; }
+  .card img{
+    height:30mm; width:auto; max-width:100%; display:block;
+    border-radius:1.2mm; border:1px solid var(--hair);
+  }
+  .card b{ display:block; margin-top:1.8mm; font-size:8.3pt; font-weight:700; line-height:1.25; }
+  .card p{ margin:.8mm 0 0; font-size:7.1pt; line-height:1.3; color:var(--gray); }
+  .store{ display:block; margin-top:1.1mm; font-size:6.6pt; letter-spacing:.08em; text-transform:uppercase; color:var(--light); }
+
+  .banner{ display:grid; grid-template-columns:96mm 1fr; gap:5mm; align-items:center; }
+  .banner img{ width:100%; display:block; border-radius:1.2mm; border:1px solid var(--hair); }
+  .banner b{ display:block; font-size:9.2pt; font-weight:700; }
+  .banner p{ margin:1mm 0 0; font-size:7.8pt; line-height:1.36; color:var(--gray); }
 
   /* ---------- print ---------- */
   @page{ size:A4; margin:0; }
@@ -111,14 +140,17 @@
     body{ background:#fff; }
     .toolbar,.hint{ display:none !important; }
     .sheet{ padding:0; gap:0; }
-    .page{ box-shadow:none; width:210mm; min-height:297mm; transform:none; margin:0; }
+    .page{ box-shadow:none; width:210mm; height:297mm; min-height:0; transform:none; margin:0; break-after:page; }
+    .page:last-child{ break-after:auto; }
   }
 </style>
 
 <div class="toolbar"><button onclick="window.print()">Print / PDF</button></div>
 
 <div class="sheet">
-  <div class="hint">A4 · 1 page · save via "Print / PDF"</div>
+  <div class="hint">A4 · 2 pages · save via "Print / PDF"</div>
+
+  <!-- ============================ PAGE 1 ============================ -->
   <div class="page">
 
     <header class="head">
@@ -179,17 +211,17 @@
         <section>
           <h2>Skills</h2>
           <ul class="plist">
-            <li>Flutter</li>
-            <li>React.js</li>
-            <li>Automation &amp; Multi-Agent Workflows</li>
-            <li>Firebase</li>
-            <li>REST API Integration</li>
+            <li>Flutter / Dart</li>
+            <li>Node.js &middot; REST APIs</li>
+            <li>Firebase (Auth, Firestore, FCM)</li>
+            <li>React.js &middot; Vite</li>
             <li>Logo Tiger ERP Integration</li>
-            <li>Node.js</li>
-            <li>Bluetooth / Embedded Systems (ESP32, Arduino)</li>
-            <li>State Management (Provider, Riverpod, GetX)</li>
-            <li>PDF Generation</li>
-            <li>Data Modeling</li>
+            <li>PyTorch &middot; Computer Vision (CNN)</li>
+            <li>On-device AI (KataGo, custom models)</li>
+            <li>WebRTC Voice / Video</li>
+            <li>Bluetooth / Embedded (ESP32, Arduino)</li>
+            <li>State Management (Riverpod, Provider)</li>
+            <li>Automation &amp; Multi-Agent Workflows</li>
           </ul>
         </section>
       </aside>
@@ -197,7 +229,7 @@
       <main class="right">
         <section class="summary">
           <h2>Summary</h2>
-          <p class="just">Software Developer specializing in Flutter, with hands-on experience in building enterprise-level applications including ERP, stock management, and system calculation tools. At BKS Holding, developed scalable mobile and backend systems, integrating with Logo Tiger ERP and optimizing business operations. Experienced in Flutter, Node.js, and embedded systems (Arduino, ESP32), with a focus on real-world problem solving and performance optimization.</p>
+          <p class="just">Software Developer specializing in Flutter, with my own apps on Google Play and the App Store and three years of enterprise mobile and backend work at BKS Holding (dealer ordering, product configuration, real-time Logo Tiger ERP integration). Recent work includes Kento, a Go analysis app running KataGo fully on-device, and StoneNet, a CNN I trained in PyTorch to read board positions from photos. Also at home in Node.js, Firebase, React and embedded systems (ESP32, Arduino).</p>
         </section>
 
         <section>
@@ -206,39 +238,155 @@
           <div class="xp">
             <div class="xp-head"><h3>Software Developer</h3><span class="xp-date">2024 - Present</span></div>
             <div class="xp-co">Independent / Project-based</div>
-            <p class="dash just">Developed Flutter-based applications for municipal services, including water usage billing systems, payment integrations, and data visualization dashboards</p>
-            <p class="dash just">Built payment collection features for field staff: QR code scanning, offline support, and Bluetooth receipt printing (using my own fork of the printer driver)</p>
+            <p class="dash just">Built and published <b>Kento</b> on <a href="https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai">Google Play</a>: a Go/Baduk recorder that photographs a real board into a digital game and analyses it with a fully offline, on-device KataGo engine &mdash; 11 languages, ad-free</p>
+            <p class="dash just">Trained <b>StoneNet</b>, custom CNNs in PyTorch, to detect board corners and classify every intersection from photos and video; exported the models to run on-device in Dart</p>
             <p class="dash just">Volunteered to design, develop, and publish <b>Go Baduk Weiqi Timer</b>, a Go (Baduk) tournament clock, on <a href="https://play.google.com/store/apps/details?id=com.borakececi.gotimer">Google Play</a> and the <a href="https://apps.apple.com/app/go-baduk-weiqi-timer/id6790043280">App Store</a> for the Turkish Go Players Association</p>
-            <p class="dash just">Designed and developed <b>Siege Duel: Trap Strategy</b> (Kapan), a board game with a pure-Dart game engine, a 3-level AI, and ranked online multiplayer (matchmaking, Elo, leaderboards) on Firebase &mdash; on the <a href="https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211">App Store</a></p>
+            <p class="dash just">Designed and developed <b>Siege Duel: Trap Strategy</b> (Kapan), a board game with a pure-Dart game engine, a 3-level AI, and ranked online multiplayer (matchmaking, Elo, leaderboards) on Firebase &mdash; on the <a href="https://apps.apple.com/app/siege-duel-trap-strategy/id6790388211">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.borakececi.block_war">Google Play</a></p>
+            <p class="dash just">Developed Flutter apps for municipal services &mdash; water-usage billing, payment integrations, dashboards &mdash; and field collection with QR scanning, offline support and Bluetooth receipt printing</p>
             <div class="strip">
-              <div class="shot"><img src="data:image/jpeg;base64,{{IMG:municipal-crop}}" alt="Municipal apps"></div>
-              <div class="shot"><img src="data:image/jpeg;base64,{{IMG:gt-menu}}" alt="gotimer menu"></div>
+              <div class="shot"><img src="data:image/webp;base64,{{IMG:kento}}" alt="Kento"></div>
               <div class="shot"><img src="data:image/jpeg;base64,{{IMG:gt-timer}}" alt="gotimer clock"></div>
               <div class="shot"><img src="data:image/webp;base64,{{IMG:kapan}}" alt="Kapan"></div>
-                          </div>
+              <div class="shot"><img src="data:image/jpeg;base64,{{IMG:municipal-crop}}" alt="Municipal apps"></div>
+            </div>
           </div>
 
           <div class="xp">
             <div class="xp-head"><h3>Software Developer</h3><span class="xp-date">01.2023 - 06.2026</span></div>
             <div class="xp-co">BKS Holding</div>
-            <p class="dash just">Developed full-cycle mobile applications for dealers and customers, covering order creation, product configuration, and purchasing processes</p>
-            <p class="dash just">Integrated with Logo Tiger ERP system for real-time purchasing and stock synchronization</p>
-            <p class="dash just">Designed dynamic calculation systems for custom product configurations</p>
-            <p class="dash just">Developed PDF/Excel outputs for quotes and orders, along with chart-based reporting and dashboard screens</p>
+            <p class="dash just">Developed full-cycle mobile apps for dealers and customers &mdash; order creation, product configuration and purchasing &mdash; with dynamic pricing/measurement calculators for folding-glass, guillotine and sliding systems</p>
+            <p class="dash just">Integrated with Logo Tiger ERP for real-time purchasing and stock synchronization</p>
+            <p class="dash just">Developed PDF/Excel outputs for quotes and orders, chart-based reporting and dashboard screens</p>
+            <p class="dash just">Built <b>BKS Smart</b>, a Bluetooth/ESP32 control app for folding-glass and pergola systems, and <b>BKS Messenger</b>, the internal chat app with WebRTC voice/video calls</p>
             <div class="strip">
               <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-panel}}" alt="BKS Panel"></div>
               <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-flow}}" alt="BKS Flow"></div>
               <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-smart}}" alt="BKS Smart"></div>
+              <div class="shot"><img src="data:image/webp;base64,{{IMG:bks-messenger}}" alt="BKS Messenger"></div>
             </div>
           </div>
 
           <div class="xp">
             <div class="xp-head"><h3>Civil Engineer</h3><span class="xp-date">2019 - 2022</span></div>
-            <p class="just">As a civil engineer, I've gained expertise in managing projects, handling unexpected challenges, and building good relationships with people.</p>
+            <p class="dash just">Managed on-site project execution, field coordination and stakeholder relations on construction projects &mdash; the problem-first mindset I still build software with</p>
           </div>
 
         </section>
       </main>
     </div>
+  </div>
+
+  <!-- ============================ PAGE 2 ============================ -->
+  <div class="page">
+
+    <header class="p2-head">
+      <div>
+        <h1>Ramazan Bora Keçeci</h1>
+        <div class="p2-sub">Selected Projects</div>
+      </div>
+      <div class="p2-links"><a href="https://rbkececi.com">rbkececi.com</a> &middot; <a href="https://github.com/kececibora">github.com/kececibora</a></div>
+    </header>
+
+    <section class="pset">
+      <h2>Published Apps <span class="h2-note">own work &middot; Google Play &amp; App Store</span></h2>
+      <div class="cards">
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:kento}}" alt="Kento">
+          <b>Kento &mdash; Go &amp; Baduk AI Analysis</b>
+          <p>Photographs a real board into a digital game and reviews it with a fully offline KataGo engine. 11 languages.</p>
+          <span class="store">Google Play</span>
+        </article>
+        <article class="card">
+          <img src="data:image/jpeg;base64,{{IMG:gt-timer}}" alt="Go / Baduk Tournament Timer">
+          <b>Go / Baduk Tournament Timer</b>
+          <p>Tournament clock for the Turkish Go Players Association: Japanese and Canadian byo-yomi, 9 languages, fully offline.</p>
+          <span class="store">Google Play &middot; App Store</span>
+        </article>
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:kapan}}" alt="Kapan — Siege Duel">
+          <b>Kapan &mdash; Siege Duel</b>
+          <p>Trap-strategy board game: pure-Dart engine, 3-level AI, ranked online play (Elo, leaderboards) on Firebase.</p>
+          <span class="store">App Store &middot; Google Play</span>
+        </article>
+        <article class="card">
+          <img src="data:image/jpeg;base64,{{IMG:municipal-crop}}" alt="Municipal service apps">
+          <b>Municipal Service Apps</b>
+          <p>Water-usage billing, payments and dashboards; QR collection for field staff with offline mode and receipt printing.</p>
+          <span class="store">Client work &middot; Flutter</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="pset">
+      <h2>On-device Computer Vision <span class="h2-note">PyTorch &middot; CNN &middot; Dart</span></h2>
+      <div class="banner">
+        <img src="data:image/webp;base64,{{IMG:stonenet}}" alt="StoneNet pipeline: photo, detected stones, digital board">
+        <div>
+          <b>StoneNet</b>
+          <p>The vision pipeline behind Kento. Custom convolutional networks trained in PyTorch on synthetic and real data find the four board corners and classify every intersection as black, white or empty from photos and video. The models run entirely on-device in Dart &mdash; no server, no upload.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pset">
+      <h2>BKS Holding &mdash; Enterprise App Family <span class="h2-note">2023&ndash;2026 &middot; Flutter &middot; Logo Tiger ERP</span></h2>
+      <div class="cards">
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:bks-panel}}" alt="BKS Panel">
+          <b>BKS Panel</b>
+          <p>B2B platform for dealers: product catalog, pricing, orders and quotes, connected to Logo Tiger ERP.</p>
+          <span class="store">Google Play</span>
+        </article>
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:bks-flow}}" alt="BKS Flow">
+          <b>BKS Flow</b>
+          <p>Enterprise workflow app with dynamic forms, approval flows and task/process tracking, with charts and reporting.</p>
+          <span class="store">Google Play</span>
+        </article>
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:bks-smart}}" alt="BKS Smart">
+          <b>BKS Smart</b>
+          <p>Opens, closes and controls the lighting of folding-glass, pergola and sliding systems over Bluetooth (ESP32).</p>
+          <span class="store">Google Play</span>
+        </article>
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:bks-messenger}}" alt="BKS Messenger">
+          <b>BKS Messenger</b>
+          <p>Internal communication app: one-to-one and group chat, WebRTC voice and video calls, multi-company accounts.</p>
+          <span class="store">Google Play</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="pset">
+      <h2>Client Web &amp; Systems <span class="h2-note">React &middot; Vite &middot; Firebase</span></h2>
+      <div class="cards">
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:olagrup}}" alt="O.L.A Group">
+          <b>O.L.A Group</b>
+          <p>Corporate site for a medical consultancy; every string in Turkish, English and Chinese.</p>
+          <span class="store">olagrup.com</span>
+        </article>
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:isi-pompasi}}" alt="Detay Mühendislik">
+          <b>Detay M&uuml;hendislik</b>
+          <p>One-page site for an Ankara heat-pump installer, from a 60-second suitability check to a survey request.</p>
+          <span class="store">isipompasi.vercel.app</span>
+        </article>
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:ilgin-sal}}" alt="Ilgın Şal &amp; Eşarp">
+          <b>Ilg&#305;n &#350;al &amp; E&#351;arp</b>
+          <p>Store site with collections, a selection guide and FAQ, routing product questions to WhatsApp.</p>
+          <span class="store">ilginsal.vercel.app</span>
+        </article>
+        <article class="card">
+          <img src="data:image/webp;base64,{{IMG:topuzcu-hukuk}}" alt="Topuzcu Hukuk">
+          <b>Topuzcu Hukuk</b>
+          <p>Law-office management: clients, case files, tasks and calendar, collections and ledger.</p>
+          <span class="store">React &middot; Firebase</span>
+        </article>
+      </div>
+    </section>
+
   </div>
 </div>
