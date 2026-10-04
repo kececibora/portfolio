@@ -40,6 +40,7 @@ Baskıya hazır, **iki sayfa** A4, **İngilizce** CV. 1. sayfa özet, deneyim, b
 
 - CV **her zaman İngilizce**.
 - Kısa, sade cümleler kullan. Deneyimde yapılan işi anlat; genel övgüler, pazarlama ifadeleri ve tekrar eden özellik listeleri ekleme.
+- **İK okuyacak gibi yaz** (Bora, 2026-10-05): özel isimler (Kento, StoneNet) tek başına durmaz, yanında düz İngilizce ne işe yaradığı yazar. Sektör jargonu yok — "folding glass, pergola" değil "smart home app, motorised windows"; "byo-yomi" değil "standard Go time controls".
 - Üst başlık: **Software Developer · Mobile & Backend** (BKS pozisyonu: "Software Developer").
 - Deneyim sırası: Independent (2024–Present) → BKS Holding (01.2023–06.2026) → Civil Engineer.
 - gotimer **hem Google Play hem App Store'da**; dernek adı "Turkish Go Players Association".
