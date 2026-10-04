@@ -48,7 +48,7 @@ Baskıya hazır, **iki sayfa** A4, **İngilizce** CV. 1. sayfa özet, deneyim, b
 - GitHub olarak yalnızca `kececibora` (bksbora bilinçli olarak yok); site: rbkececi.com.
 - **Chess Trainer CV'de kullanılmıyor** (istek üzerine çıkarıldı).
 - 1. sayfada uygulama görseli **yok** (Bora, 2026-10-03: "ikinci sayfada var zaten"); tüm ekran görüntüleri 2. sayfadaki kartlarda, ad + bir cümle + mağaza/adres ile.
-- 2. sayfa düzeni: Independent & Client Apps (4) → StoneNet banner → BKS Holding Apps (4) → Client Web Projects (4). Belediye uygulaması müşteri projesidir; mağazada yayımlanmış uygulama olarak etiketleme. Yeni proje eklerken satırı 4'te tut; 5. kart taşırır.
+- 2. sayfa düzeni: Independent & Client Apps (4) → StoneNet banner → BKS Holding Apps (3 — Messenger yok, Bora o uygulamada rol almadı; 2026-10-05) → Client Web Projects (4). Belediye uygulaması müşteri projesidir; mağazada yayımlanmış uygulama olarak etiketleme. Yeni proje eklerken satırı 4'te tut; 5. kart taşırır.
 - Görseller `.preview` çerçevelerinde kırpılmadan gösterilir. Kart açıklamaları bir kısa cümle; mağaza ve web adresleri PDF'de de tıklanabilir.
 - Beceri listesinde somut teknolojiler yer alır. Genel "Automation & Multi-Agent Workflows" maddesi ve yazılımla ilgisiz Primavera kursu CV'den çıkarıldı.
 - gotimer görselleri Google Play'deki **v2 mağaza görselleri** (koyu ahşap tasarım).

@@ -121,6 +121,7 @@
   .h2-note{ font-size:7.8pt; font-weight:400; letter-spacing:0; color:var(--light); text-transform:none; }
 
   .cards{ display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:4mm; }
+  .cards-3{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
   .card{ display:flex; flex-direction:column; align-items:stretch; break-inside:avoid; }
   .preview{
     height:32mm; display:flex; align-items:center; justify-content:center;
@@ -262,7 +263,7 @@
               <li>Built measurement and price calculations for folding glass, guillotine and sliding systems.</li>
               <li>Connected the apps to <b>Logo Tiger ERP</b> to keep stock, purchasing and order data in sync.</li>
               <li>Added PDF and Excel exports, reports, approval forms and dashboards.</li>
-              <li>Worked on <b>BKS Smart</b> for Bluetooth control of glass and pergola systems, and <b>BKS Messenger</b> for chat and WebRTC calls.</li>
+              <li>Worked on <b>BKS Smart</b> for Bluetooth control of glass and pergola systems.</li>
             </ul>
           </div>
 
@@ -332,7 +333,7 @@
 
     <section class="pset">
       <h2>BKS Holding Apps <span class="h2-note">2023&ndash;2026 &middot; Flutter</span></h2>
-      <div class="cards">
+      <div class="cards cards-3">
         <article class="card">
           <div class="preview"><img src="data:image/jpeg;base64,{{IMG:bks-panel}}" alt="BKS Panel dealer product catalogue"></div>
           <b>BKS Panel</b>
@@ -350,12 +351,6 @@
           <b>BKS Smart</b>
           <p>Bluetooth control for glass systems, pergolas and lighting.</p>
           <span class="store"><a href="https://play.google.com/store/apps/details?id=com.bkscam.bks">Google Play</a></span>
-        </article>
-        <article class="card">
-          <div class="preview"><img src="data:image/jpeg;base64,{{IMG:bks-messenger}}" alt="BKS Messenger company chat screen"></div>
-          <b>BKS Messenger</b>
-          <p>Company messaging with group chats and WebRTC voice and video calls.</p>
-          <span class="store"><a href="https://play.google.com/store/apps/details?id=com.bkscam.bkschat">Google Play</a></span>
         </article>
       </div>
     </section>
