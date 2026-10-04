@@ -1,6 +1,6 @@
 # CV — Ramazan Bora Keçeci
 
-Baskıya hazır, **iki sayfa** A4, **İngilizce** CV. 1. sayfa Canva'daki "Siyah Beyaz Sade Özgeçmiş" şablonunun (design id: `DAF4dc5iFaE`) HTML kopyası; 2. sayfa aynı tipografiyle "Selected Projects" — görsel ağırlıklı proje sayfası (2026-10-03'te eklendi).
+Baskıya hazır, **iki sayfa** A4, **İngilizce** CV. 1. sayfa özet, deneyim, beceriler ve eğitim; 2. sayfa ekran görüntüleri ve kısa açıklamalarla "Selected Projects". Canva şablonundan başlayan düzen, 2026-10-03'te sade İngilizce, daha okunaklı yazılar ve ortak görsel çerçevelerle güncellendi.
 
 ## Dosyalar
 
@@ -39,6 +39,7 @@ Baskıya hazır, **iki sayfa** A4, **İngilizce** CV. 1. sayfa Canva'daki "Siyah
 ## İçerik kararları (değiştirmeden önce oku)
 
 - CV **her zaman İngilizce**.
+- Kısa, sade cümleler kullan. Deneyimde yapılan işi anlat; genel övgüler, pazarlama ifadeleri ve tekrar eden özellik listeleri ekleme.
 - Üst başlık: **Software Developer · Mobile & Backend** (BKS pozisyonu: "Software Developer").
 - Deneyim sırası: Independent (2024–Present) → BKS Holding (01.2023–06.2026) → Civil Engineer.
 - gotimer **hem Google Play hem App Store'da**; dernek adı "Turkish Go Players Association".
@@ -47,7 +48,9 @@ Baskıya hazır, **iki sayfa** A4, **İngilizce** CV. 1. sayfa Canva'daki "Siyah
 - GitHub olarak yalnızca `kececibora` (bksbora bilinçli olarak yok); site: rbkececi.com.
 - **Chess Trainer CV'de kullanılmıyor** (istek üzerine çıkarıldı).
 - 1. sayfada uygulama görseli **yok** (Bora, 2026-10-03: "ikinci sayfada var zaten"); tüm ekran görüntüleri 2. sayfadaki kartlarda, ad + bir cümle + mağaza/adres ile.
-- 2. sayfa düzeni: Published Apps (4) → StoneNet banner → BKS ailesi (4) → Client Web & Systems (4). Yeni proje eklerken satırı 4'te tut; 5. kart taşırır.
+- 2. sayfa düzeni: Independent & Client Apps (4) → StoneNet banner → BKS Holding Apps (4) → Client Web Projects (4). Belediye uygulaması müşteri projesidir; mağazada yayımlanmış uygulama olarak etiketleme. Yeni proje eklerken satırı 4'te tut; 5. kart taşırır.
+- Görseller `.preview` çerçevelerinde kırpılmadan gösterilir. Kart açıklamaları bir kısa cümle; mağaza ve web adresleri PDF'de de tıklanabilir.
+- Beceri listesinde somut teknolojiler yer alır. Genel "Automation & Multi-Agent Workflows" maddesi ve yazılımla ilgisiz Primavera kursu CV'den çıkarıldı.
 - gotimer görselleri Google Play'deki **v2 mağaza görselleri** (koyu ahşap tasarım).
 - `municipal-crop.jpg` kenarları kırpılmış versiyondur (orijinal: rbkececiWebSite/public/projects/municipal.webp).
 
