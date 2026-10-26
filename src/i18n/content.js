@@ -235,7 +235,10 @@ export const content = {
           ],
           tags: ['Flutter', 'KataGo', 'C++', 'Bilgisayarla Görü'],
           code: 'app/kento',
-          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai' }],
+          links: [
+            { kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai' },
+            { kind: 'site', url: 'https://rbkececi.com/kento/' },
+          ],
           image: '/projects/kento.webp',
         },
         {
@@ -641,7 +644,10 @@ export const content = {
           ],
           tags: ['Flutter', 'KataGo', 'C++', 'Computer Vision'],
           code: 'app/kento',
-          links: [{ kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai' }],
+          links: [
+            { kind: 'play', url: 'https://play.google.com/store/apps/details?id=com.borakececi.offlinebadukai' },
+            { kind: 'site', url: 'https://rbkececi.com/kento/en/' },
+          ],
           image: '/projects/kento.webp',
         },
         {
