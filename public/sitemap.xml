@@ -13,7 +13,42 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-  <!-- Kento gizlilik/kosullar sayfalari noindex oldugu icin sitemap'e alinmadi. -->
+  <url>
+    <loc>https://rbkececi.com/kento/gizlilik/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rbkececi.com/kento/gizlilik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/privacy/"/>
+  </url>
+  <url>
+    <loc>https://rbkececi.com/kento/privacy/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rbkececi.com/kento/gizlilik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/privacy/"/>
+  </url>
+  <url>
+    <loc>https://rbkececi.com/kento/kosullar/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rbkececi.com/kento/kosullar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/terms/"/>
+  </url>
+  <url>
+    <loc>https://rbkececi.com/kento/terms/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rbkececi.com/kento/kosullar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rbkececi.com/kento/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rbkececi.com/kento/terms/"/>
+  </url>
   <url>
     <loc>https://rbkececi.com/kento/hesap-silme/</loc>
     <lastmod>2026-08-28</lastmod>
